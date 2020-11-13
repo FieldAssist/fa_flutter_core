@@ -7,7 +7,7 @@ Official FA Flutter core package.
 Add following code in pubspec.yaml file in dependencies:
 
 ```
-  fa_flutter_logger:
+  fa_flutter_core:
     git:
       url: https://github.com/FieldAssist/fa_flutter_core.git
       ref: main
