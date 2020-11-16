@@ -2,6 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 
+bool get isDebug {
+  bool inDebugMode = false;
+  assert(inDebugMode = true);
+  return inDebugMode;
+}
+
 bool get isMobile {
   return !kIsWeb && (Platform.isAndroid || Platform.isIOS);
 }
