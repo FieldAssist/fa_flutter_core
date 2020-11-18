@@ -1,4 +1,4 @@
-# fa_flutter_core
+# fa_flutter_core [![codecov](https://codecov.io/gh/FieldAssist/fa_flutter_core/branch/main/graph/badge.svg?token=0SJUKQDEC2)](https://codecov.io/gh/FieldAssist/fa_flutter_core)
 
 Official FA Flutter core package.
 
