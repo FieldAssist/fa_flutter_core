@@ -30,11 +30,19 @@ jobs:
         with:
           # flutter-version: '1.21.0-7.0.pre'
           channel: 'beta'
+
       - name: 'Flutter Doctor'
         run: flutter doctor -v
-      - run: flutter pub get
+
+      - name: 'Flutter Pub Get'
+        run: flutter pub get
+
+      - name: 'Flutter Format Check'
+        run: flutter format --set-exit-if-changed --dry-run .
+
       - name: 'Run Test(s)'
         run: flutter test --coverage
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
