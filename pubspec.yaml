@@ -18,6 +18,10 @@ dependencies:
   localstorage: ^3.0.3+6
   shared_preferences: ^0.5.12+4
 
+  # Logger
+  ansicolor: ^1.0.5
+  logger: ^0.9.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
