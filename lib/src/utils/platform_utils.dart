@@ -13,11 +13,11 @@ bool get isMobile {
 }
 
 bool get isAndroid {
-  return !isMobile && Platform.isAndroid;
+  return isMobile && Platform.isAndroid;
 }
 
 bool get isIOS {
-  return !isMobile && Platform.isIOS;
+  return isMobile && Platform.isIOS;
 }
 
 bool get isLinux {
