@@ -5,7 +5,7 @@ class MyConsoleOutput extends LogOutput {
   @override
   void output(OutputEvent event) {
     event.lines.forEach((value) {
-      debugPrint(value);
+      debugPrint('${DateTime.now()}: ' + value);
     });
   }
 }
