@@ -15,15 +15,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.24.1
+  rxdart: ^0.25.0
   build_context: ^2.0.4
 
   # Preferences
-  localstorage: ^3.0.3+6
+  localstorage: ^3.0.4+7
   shared_preferences: ^0.5.12+4
 
   # Logger
-  ansicolor: ^1.0.5
+  ansicolor: ^1.1.1
   logger: ^0.9.4
   package_info: ^0.4.3+2
 

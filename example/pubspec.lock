@@ -127,7 +127,7 @@ packages:
       name: localstorage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.3+6"
+    version: "3.0.4+7"
   logger:
     dependency: transitive
     description:
@@ -225,7 +225,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.24.1"
+    version: "0.25.0"
   shared_preferences:
     dependency: transitive
     description:
