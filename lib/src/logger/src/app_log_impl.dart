@@ -5,10 +5,17 @@ import 'logger/output/my_console_output.dart';
 import 'logger/printer/my_pretty_printer.dart';
 
 class AppLogImpl implements AppLog {
-  final _logger = Logger(
-    printer: MyPrettyPrinter(),
-    output: MyConsoleOutput(),
-  );
+  AppLogImpl({this.packageName}) {
+    _logger = Logger(
+      printer: MyPrettyPrinter(),
+      output: MyConsoleOutput(
+        packageName: packageName,
+      ),
+    );
+  }
+
+  final String packageName;
+  Logger _logger;
 
   @override
   void d(object) {

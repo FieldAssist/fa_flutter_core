@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-final logger = AppLogImpl();
+final logger = AppLogImpl(packageName: "flutter_core");
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
