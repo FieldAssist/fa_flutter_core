@@ -113,7 +113,7 @@ packages:
       name: localstorage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.4+7"
+    version: "3.0.6+9"
   logger:
     dependency: "direct main"
     description:
@@ -211,7 +211,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.25.0"
+    version: "0.24.1"
   shared_preferences:
     dependency: "direct main"
     description:
