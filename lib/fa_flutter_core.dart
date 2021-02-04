@@ -8,3 +8,4 @@ export 'src/prefs/fa_flutter_prefs.dart';
 export 'src/utils/mime_type.dart';
 export 'src/utils/platform_utils.dart';
 export 'src/utils/utils.dart';
+export 'package:rxdart/rxdart.dart';
