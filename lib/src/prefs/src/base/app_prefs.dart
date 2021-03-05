@@ -2,15 +2,15 @@ abstract class AppPrefs {
   Future<void> initialise();
 
   // Getters
-  bool getBool(String key);
+  bool? getBool(String key);
 
-  int getInt(String key);
+  int? getInt(String key);
 
-  double getDouble(String key);
+  double? getDouble(String key);
 
-  String getString(String key);
+  String? getString(String key);
 
-  List<String> getStringList(String key);
+  List<String>? getStringList(String key);
 
   //  Setters
   void setBool(String key, bool value);

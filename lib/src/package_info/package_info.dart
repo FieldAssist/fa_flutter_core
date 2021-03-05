@@ -14,10 +14,10 @@ abstract class PackageInformation {
 
 class PackageInformationImpl implements PackageInformation {
   const PackageInformationImpl({
-    @required this.appName,
-    @required this.buildNumber,
-    @required this.packageName,
-    @required this.version,
+    required this.appName,
+    required this.buildNumber,
+    required this.packageName,
+    required this.version,
   });
 
   static Future<PackageInformation> getPackageInfo() async {

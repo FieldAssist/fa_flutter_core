@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../base/app_prefs.dart';
 
 class SharedAppPrefs implements AppPrefs {
-  SharedPreferences _prefs;
+  late SharedPreferences _prefs;
 
   @override
   Future<void> initialise() async {
@@ -11,27 +11,27 @@ class SharedAppPrefs implements AppPrefs {
   }
 
   @override
-  bool getBool(String key) {
+  bool? getBool(String key) {
     return _prefs.getBool(key);
   }
 
   @override
-  double getDouble(String key) {
+  double? getDouble(String key) {
     return _prefs.getDouble(key);
   }
 
   @override
-  int getInt(String key) {
+  int? getInt(String key) {
     return _prefs.getInt(key);
   }
 
   @override
-  String getString(String key) {
+  String? getString(String key) {
     return _prefs.getString(key);
   }
 
   @override
-  List<String> getStringList(String key) {
+  List<String>? getStringList(String key) {
     return _prefs.getStringList(key);
   }
 

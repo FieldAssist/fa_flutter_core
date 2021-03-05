@@ -1,5 +1,5 @@
 // get MIME type from file name (returns null if there is no such extension)
-String mime(String fileName) {
+String? mime(String fileName) {
   int lastDot = fileName.lastIndexOf('.', fileName.length - 1);
   if (lastDot != -1) {
     String extension = fileName.substring(lastDot + 1);
@@ -9,7 +9,7 @@ String mime(String fileName) {
 }
 
 // get MIME type from extension (returns null if there is no such extension)
-String mimeFromExtension(String extension) =>
+String? mimeFromExtension(String extension) =>
     _mimeMaps[extension?.toLowerCase()];
 
 // default MIME type mappings

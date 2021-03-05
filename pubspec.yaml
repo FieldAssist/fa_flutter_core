@@ -9,7 +9,7 @@ homepage: https://github.com/FieldAssist/fa_flutter_core.git
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -22,8 +22,8 @@ dependencies:
   shared_preferences: ^2.0.3
 
   # Logger
-  ansicolor: ^1.1.1
-  logger: ^0.9.4
+  ansicolor: ^2.0.0-nullsafety.0
+  logger: ^1.0.0-nullsafety.0
   package_info: ^2.0.0
 
 dev_dependencies:

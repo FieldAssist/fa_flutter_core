@@ -4,7 +4,7 @@ import 'package:logger/logger.dart';
 class MyConsoleOutput extends LogOutput {
   MyConsoleOutput({this.packageName});
 
-  final String packageName;
+  final String? packageName;
 
   @override
   void output(OutputEvent event) {

@@ -19,7 +19,7 @@ class MyPrettyPrinter extends LogPrinter {
   List<String> log(LogEvent event) {
     final messageStr = stringifyMessage(event.message);
 
-    String stackTraceStr;
+    String? stackTraceStr;
 
     if (event.stackTrace != null) {
       stackTraceStr = formatStackTrace(event.stackTrace, _errorMethodCount);
@@ -45,7 +45,7 @@ class MyPrettyPrinter extends LogPrinter {
     }
   }
 
-  String formatStackTrace(StackTrace stackTrace, int methodCount) {
+  String? formatStackTrace(StackTrace? stackTrace, int methodCount) {
     final lines = stackTrace.toString().split('\n');
 
     final formatted = <String>[];
@@ -53,7 +53,7 @@ class MyPrettyPrinter extends LogPrinter {
     for (final line in lines) {
       final match = _stackTraceRegex.matchAsPrefix(line);
       if (match != null) {
-        if (match.group(2).startsWith('package:logger')) {
+        if (match.group(2)!.startsWith('package:logger')) {
           continue;
         }
         final newLine = '#$count   ${match.group(1)} (${match.group(2)})';
@@ -76,8 +76,8 @@ class MyPrettyPrinter extends LogPrinter {
   List<String> _formatAndPrint(
     Level level,
     String message,
-    String error,
-    String stacktrace,
+    String? error,
+    String? stacktrace,
   ) {
     final formatted = <String>[];
 
@@ -110,7 +110,7 @@ class MyPrettyPrinter extends LogPrinter {
     return formatted;
   }
 
-  String _getEmoji(Level level) {
+  String? _getEmoji(Level level) {
     return _levelEmojis[level];
   }
 }

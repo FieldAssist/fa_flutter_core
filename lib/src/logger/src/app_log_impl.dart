@@ -14,8 +14,8 @@ class AppLogImpl implements AppLog {
     );
   }
 
-  final String packageName;
-  Logger _logger;
+  final String? packageName;
+  late Logger _logger;
 
   @override
   void d(object) {

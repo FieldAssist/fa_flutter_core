@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('checkIfNotEmpty', () {
     test('checkIfNotEmpty should return false when string is null', () {
-      final String myString = null;
+      final String? myString = null;
       final result = checkIfNotEmpty(myString);
       expect(result, false);
     });
@@ -28,7 +28,7 @@ void main() {
 
   group('checkIfListIsNotEmpty', () {
     test('checkIfListIsNotEmpty should return false when the list is null', () {
-      final List myList = null;
+      final List? myList = null;
       final result = checkIfListIsNotEmpty(myList);
       expect(result, false);
     });
