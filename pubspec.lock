@@ -2,12 +2,12 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   ansicolor:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: ansicolor
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-nullsafety.0"
+    version: "1.1.1"
   async:
     dependency: transitive
     description:
@@ -57,6 +57,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  fa_dart_logger:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: "1318d0717a3dec24ad4bf8f2f746d5fe87ada345"
+      url: "https://github.com/FieldAssist/fa_dart_logger.git"
+    source: git
+    version: "1.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -101,12 +110,12 @@ packages:
     source: hosted
     version: "0.6.3"
   logger:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0-nullsafety.0"
+    version: "0.9.4"
   matcher:
     dependency: transitive
     description:
