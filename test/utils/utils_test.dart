@@ -1,4 +1,4 @@
-import 'package:fa_flutter_core/fa_flutter_core.dart';
+import 'package:fa_dart_core/fa_flutter_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

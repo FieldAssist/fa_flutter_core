@@ -64,6 +64,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  fa_dart_core:
+    dependency: transitive
+    description:
+      path: "."
+      ref: main
+      resolved-ref: abc69abcb384284a778a6df1ff71938feeeca029
+      url: "https://github.com/FieldAssist/fa_dart_core.git"
+    source: git
+    version: "2.0.0+2"
   fa_dart_logger:
     dependency: transitive
     description:
