@@ -62,7 +62,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: e758815df88b5023949970dc5aef4e1bf7b0ba80
+      resolved-ref: f446f9a76c2063f33c5b59d43803a1e2a5f979f4
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
@@ -71,7 +71,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "942fd137224a890c6079977e41f46b77690c7804"
+      resolved-ref: e80a4ea2624ac77c847bcd21f68542ed732ba87d
       url: "https://github.com/FieldAssist/fa_dart_logger.git"
     source: git
     version: "1.0.0"

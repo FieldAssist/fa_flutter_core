@@ -7,7 +7,7 @@ packages:
       name: ansicolor
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "2.0.0-nullsafety.0"
   async:
     dependency: transitive
     description:
@@ -28,7 +28,7 @@ packages:
       name: build_context
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "3.0.0"
   characters:
     dependency: transitive
     description:
@@ -69,7 +69,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: abc69abcb384284a778a6df1ff71938feeeca029
+      resolved-ref: f446f9a76c2063f33c5b59d43803a1e2a5f979f4
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
@@ -78,7 +78,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "1318d0717a3dec24ad4bf8f2f746d5fe87ada345"
+      resolved-ref: e80a4ea2624ac77c847bcd21f68542ed732ba87d
       url: "https://github.com/FieldAssist/fa_dart_logger.git"
     source: git
     version: "1.0.0"
@@ -138,7 +138,7 @@ packages:
       name: logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.4"
+    version: "1.0.0-nullsafety.0"
   matcher:
     dependency: transitive
     description:

@@ -1,4 +1,4 @@
-import 'package:fa_dart_core/fa_flutter_core.dart';
+import 'package:fa_dart_core/fa_dart_core.dart';
 import 'package:package_info/package_info.dart';
 
 abstract class PackageInformation {
