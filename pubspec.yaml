@@ -15,11 +15,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  build_context: ^2.0.4
   package_info: ^2.0.0
 
   # Preferences
-  shared_preferences: ^2.0.3
+  shared_preferences: ^2.0.4
 
   # FA dart core
   fa_dart_core:
