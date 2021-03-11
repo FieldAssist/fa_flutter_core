@@ -36,27 +36,42 @@ class SharedAppPrefs implements AppPrefs {
   }
 
   @override
-  void setBool(String key, bool value) {
+  void setBool(String key, bool? value) {
+    if (value == null) {
+      return;
+    }
     _prefs.setBool(key, value);
   }
 
   @override
-  void setDouble(String key, double value) {
+  void setDouble(String key, double? value) {
+    if (value == null) {
+      return;
+    }
     _prefs.setDouble(key, value);
   }
 
   @override
-  void setInt(String key, int value) {
+  void setInt(String key, int? value) {
+    if (value == null) {
+      return;
+    }
     _prefs.setInt(key, value);
   }
 
   @override
-  void setString(String key, String value) {
+  void setString(String key, String? value) {
+    if (value == null) {
+      return;
+    }
     _prefs.setString(key, value);
   }
 
   @override
-  void setStringList(String key, List<String> value) {
+  void setStringList(String key, List<String>? value) {
+    if (value == null) {
+      return;
+    }
     _prefs.setStringList(key, value);
   }
 
