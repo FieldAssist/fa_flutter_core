@@ -38,6 +38,7 @@ class SharedAppPrefs implements AppPrefs {
   @override
   void setBool(String key, bool? value) {
     if (value == null) {
+      _prefs.remove(key);
       return;
     }
     _prefs.setBool(key, value);
@@ -46,6 +47,7 @@ class SharedAppPrefs implements AppPrefs {
   @override
   void setDouble(String key, double? value) {
     if (value == null) {
+      _prefs.remove(key);
       return;
     }
     _prefs.setDouble(key, value);
@@ -54,6 +56,7 @@ class SharedAppPrefs implements AppPrefs {
   @override
   void setInt(String key, int? value) {
     if (value == null) {
+      _prefs.remove(key);
       return;
     }
     _prefs.setInt(key, value);
@@ -62,6 +65,7 @@ class SharedAppPrefs implements AppPrefs {
   @override
   void setString(String key, String? value) {
     if (value == null) {
+      _prefs.remove(key);
       return;
     }
     _prefs.setString(key, value);
@@ -70,6 +74,7 @@ class SharedAppPrefs implements AppPrefs {
   @override
   void setStringList(String key, List<String>? value) {
     if (value == null) {
+      _prefs.remove(key);
       return;
     }
     _prefs.setStringList(key, value);
