@@ -18,7 +18,7 @@ dependencies:
   package_info: ^2.0.0
 
   # Preferences
-  shared_preferences: ^2.0.4
+  shared_preferences: ^2.0.5
 
   # FA dart core
   fa_dart_core:
