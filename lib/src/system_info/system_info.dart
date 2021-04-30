@@ -36,6 +36,9 @@ class SystemInfo implements DeviceInfo, PackageInformation {
   @override
   int? get sdk => deviceInfo.sdk;
 
+  @override
+  String get imei => deviceInfo.imei;
+
   Map<String, dynamic> get map => {
         "AppVersionName": appName,
         "AppVersionNumber": version,
@@ -46,5 +49,6 @@ class SystemInfo implements DeviceInfo, PackageInformation {
         "OSVersion": os,
         "SdkVersion": sdk,
         "Serial": id,
+        "IMEINo": imei,
       };
 }
