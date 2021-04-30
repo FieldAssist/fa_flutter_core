@@ -12,12 +12,15 @@ abstract class DeviceInfo {
   int? get sdk;
 
   String get id;
+
+  String get imei;
 }
 
 class IosDeviceInfoImpl implements DeviceInfo {
   final IosDeviceInfo iosDeviceInfo;
+  final String imeiNo;
 
-  const IosDeviceInfoImpl({required this.iosDeviceInfo});
+  const IosDeviceInfoImpl({required this.iosDeviceInfo, required this.imeiNo});
 
   @override
   String get brand => 'Apple Inc';
@@ -36,12 +39,17 @@ class IosDeviceInfoImpl implements DeviceInfo {
 
   @override
   String get id => iosDeviceInfo.identifierForVendor;
+
+  @override
+  String get imei => imeiNo;
 }
 
 class AndroidDeviceInfoImpl implements DeviceInfo {
   final AndroidDeviceInfo androidDeviceInfo;
+  final String imeiNo;
 
-  const AndroidDeviceInfoImpl({required this.androidDeviceInfo});
+  const AndroidDeviceInfoImpl(
+      {required this.androidDeviceInfo, required this.imeiNo});
 
   @override
   String get brand => androidDeviceInfo.brand;
@@ -60,6 +68,9 @@ class AndroidDeviceInfoImpl implements DeviceInfo {
 
   @override
   String get id => androidDeviceInfo.id;
+
+  @override
+  String get imei => imeiNo;
 }
 
 class UnknownDeviceInfoImpl implements DeviceInfo {
@@ -82,4 +93,7 @@ class UnknownDeviceInfoImpl implements DeviceInfo {
 
   @override
   String get id => "NA";
+
+  @override
+  String get imei => "NA";
 }
