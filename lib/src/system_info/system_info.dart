@@ -16,7 +16,7 @@ class SystemInfo implements DeviceInfo, PackageInformation {
   String get packageName => packageInfo.packageName;
 
   @override
-  String get buildNumber => packageInfo.buildNumber;
+  int get buildNumber => packageInfo.buildNumber;
 
   @override
   String get brand => deviceInfo.brand;
@@ -40,8 +40,8 @@ class SystemInfo implements DeviceInfo, PackageInformation {
   String get imei => deviceInfo.imei;
 
   Map<String, dynamic> get map => {
-        "AppVersionName": appName,
-        "AppVersionNumber": version,
+        "AppVersionName": version,
+        "AppVersionNumber": buildNumber,
         "Brand": brand,
         "GcmId": "na",
         "Manufacturer": manufacturer,

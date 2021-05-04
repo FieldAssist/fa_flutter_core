@@ -8,7 +8,7 @@ abstract class PackageInformation {
 
   String get version;
 
-  String get buildNumber;
+  int get buildNumber;
 }
 
 class PackageInformationImpl implements PackageInformation {
@@ -24,14 +24,14 @@ class PackageInformationImpl implements PackageInformation {
       final packageInfo = await PackageInfo.fromPlatform();
       return PackageInformationImpl(
         appName: packageInfo.appName,
-        buildNumber: packageInfo.buildNumber,
+        buildNumber: int.tryParse(packageInfo.buildNumber) ?? -1,
         packageName: packageInfo.packageName,
         version: packageInfo.version,
       );
     } else {
       return PackageInformationImpl(
         appName: "NA",
-        buildNumber: "0",
+        buildNumber: 0,
         packageName: "NA",
         version: "NA",
       );
@@ -41,7 +41,7 @@ class PackageInformationImpl implements PackageInformation {
   @override
   final String appName;
   @override
-  final String buildNumber;
+  final int buildNumber;
   @override
   final String packageName;
   @override
