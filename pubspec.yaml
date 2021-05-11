@@ -16,6 +16,8 @@ dependencies:
   flutter:
     sdk: flutter
   package_info: ^2.0.0
+  jiffy: ^4.1.0
+  internet_connection_checker: ^0.0.1
 
   # Preferences
   shared_preferences: ^2.0.5
@@ -26,12 +28,24 @@ dependencies:
       url: https://github.com/FieldAssist/fa_dart_core.git
       ref: main
 
+  # FA Ui kit
+  fa_flutter_ui_kit:
+    git:
+      url: https://github.com/FieldAssist/fa_flutter_ui_kit.git
+      ref: main
+
   # Model Utilities
   freezed_annotation: ^0.14.1
   json_annotation: ^4.0.1
 
   # Device Utilities
   device_info: ^2.0.0
+
+  #Location
+  geolocator: ^7.0.1
+  geocoder: ^0.2.1
+  geocoding: ^2.0.0
+  google_maps_flutter: ^2.0.1
 
 dev_dependencies:
   flutter_test:
