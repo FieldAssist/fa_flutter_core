@@ -6,7 +6,3 @@ coverage:
         # basic
         target: 0%
         threshold: 0%
-
-ignore:
-  - "**/*.freezed.dart"
-  - "**/*.g.dart"

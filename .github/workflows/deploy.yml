@@ -6,9 +6,9 @@ name: Test
 # events but only for the master branch
 on:
   push:
-    branches: [main, develop]
+    branches: [ main, develop ]
   pull_request:
-    branches: [main, develop]
+    branches: [ main, develop ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,6 +31,10 @@ jobs:
           # flutter-version: '1.21.0-7.0.pre'
           channel: 'beta'
 
+      - name: "Activate remove_from_coverage package"
+        run: |
+          pub global activate remove_from_coverage
+
       - name: 'Flutter Doctor'
         run: flutter doctor -v
 
@@ -42,6 +46,10 @@ jobs:
 
       - name: 'Run Test(s)'
         run: flutter test --coverage
+
+      - name: 'Remove ignored files from coverage'
+        run: |
+          remove_from_coverage -f coverage/lcov.info -r '\.g\.dart$' -r '\.freezed\.dart$'
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
