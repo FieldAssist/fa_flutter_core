@@ -188,7 +188,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "65562ab2c63dd14389f70d4e1b2ba0760995b7fd"
+      resolved-ref: d5a5d722a09b1a784234fa6fab32688de07529d1
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
