@@ -75,8 +75,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: main-upgrade
-      resolved-ref: adef4c396224315abf32f5a358ffe1c3ed685465
+      ref: main
+      resolved-ref: "0cb558d68de0f53658f966ac10cebbc5d57c8c26"
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
@@ -84,8 +84,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: main-upgrade
-      resolved-ref: "0080b53fac73faa4437e1be0ea87a58ac1c83d23"
+      ref: main
+      resolved-ref: bc8b9b7fda28941ec5ee9096eeaba0a9f385517e
       url: "https://github.com/FieldAssist/fa_dart_logger.git"
     source: git
     version: "1.0.0"

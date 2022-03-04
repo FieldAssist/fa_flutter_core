@@ -7,6 +7,7 @@ class SharedAppPrefs implements AppPrefs {
 
   @override
   Future<void> initialise() async {
+    SharedPreferences.setMockInitialValues({});
     _prefs = await SharedPreferences.getInstance();
   }
 
