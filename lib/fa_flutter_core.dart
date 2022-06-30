@@ -13,3 +13,4 @@ export 'src/result/result.dart';
 export 'src/system_info/system_info.dart';
 export 'src/utils/platform_utils.dart';
 export 'src/void_result/void_result.dart';
+export 'src/in_app_update/in_app_updator.dart';
