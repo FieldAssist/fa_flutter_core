@@ -58,9 +58,9 @@ class InAppUpdator {
     }
   }
 
-  String get error => _error;
+  String? get error => _error;
 
-  set error(String? err) => _error = null;
+  set error(String? err) => _error = err;
 
   AppUpdateResult? get appUpdateResult => _updateResult;
 }
