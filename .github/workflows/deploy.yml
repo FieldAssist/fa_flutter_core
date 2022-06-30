@@ -28,8 +28,8 @@ jobs:
           java-version: 1.8
       - uses: subosito/flutter-action@v1
         with:
-          # flutter-version: '1.21.0-7.0.pre'
-          channel: 'beta'
+          channel: 'stable'
+          flutter-version: '2.10.3'
 
       - name: "Activate remove_from_coverage package"
         run: |
