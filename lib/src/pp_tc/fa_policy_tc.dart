@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class FaPrivacyPoliciesAndTC extends StatelessWidget {
+class FaPrivacyPoliciesAndTC extends StatefulWidget {
   const FaPrivacyPoliciesAndTC({
     this.onResult,
     this.url,
@@ -11,40 +11,63 @@ class FaPrivacyPoliciesAndTC extends StatelessWidget {
   final String? url;
 
   @override
+  State<FaPrivacyPoliciesAndTC> createState() => _FaPrivacyPoliciesAndTCState();
+}
+
+class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
+  bool _pageLoaded = false;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebView(
-        initialUrl: url ?? 'https://www.fieldassist.in/privacy-policy/',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
-      bottomNavigationBar: Row(
+      body: Stack(
         children: [
-          Expanded(
-            child: MaterialButton(
-                color: Colors.red.shade300,
-                child: Text(
-                  "Reject",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  onResult?.call(false);
-                  Navigator.pop(context);
-                }),
+          WebView(
+            initialUrl:
+                widget.url ?? 'https://www.fieldassist.in/privacy-policy/',
+            javascriptMode: JavascriptMode.unrestricted,
+            onPageFinished: (_) {
+              setState(() {
+                _pageLoaded = true;
+              });
+            },
           ),
-          Expanded(
-            child: MaterialButton(
-                color: Colors.blue.shade300,
-                child: Text(
-                  "Accept",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  onResult?.call(true);
-                  Navigator.pop(context);
-                }),
-          ),
+          if (!_pageLoaded)
+            Center(
+              child: CircularProgressIndicator(),
+            ),
         ],
       ),
+      bottomNavigationBar: !_pageLoaded
+          ? null
+          : Row(
+              children: [
+                Expanded(
+                  child: MaterialButton(
+                      color: Colors.red.shade300,
+                      child: Text(
+                        "Reject",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        widget.onResult?.call(false);
+                        Navigator.pop(context);
+                      }),
+                ),
+                Expanded(
+                  child: MaterialButton(
+                      color: Colors.blue.shade300,
+                      child: Text(
+                        "Accept",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        widget.onResult?.call(true);
+                        Navigator.pop(context);
+                      }),
+                ),
+              ],
+            ),
     );
   }
 }
