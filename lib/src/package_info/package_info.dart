@@ -1,5 +1,3 @@
-import 'package:package_info/package_info.dart';
-
 import '../../fa_flutter_core.dart';
 
 abstract class PackageInformation {

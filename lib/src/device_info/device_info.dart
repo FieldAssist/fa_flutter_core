@@ -1,4 +1,4 @@
-import 'package:device_info/device_info.dart';
+import 'package:fa_flutter_core/fa_flutter_core.dart';
 
 abstract class DeviceInfo {
   String get brand;
@@ -29,7 +29,7 @@ class IosDeviceInfoImpl implements DeviceInfo {
   String get manufacturer => 'Apple Inc';
 
   @override
-  String get model => iosDeviceInfo.model;
+  String get model => iosDeviceInfo.model ?? UnknownDeviceInfoImpl().model;
 
   @override
   String get os => '${iosDeviceInfo.systemName} ${iosDeviceInfo.systemVersion}';
@@ -38,7 +38,8 @@ class IosDeviceInfoImpl implements DeviceInfo {
   int? get sdk => 0;
 
   @override
-  String get id => iosDeviceInfo.identifierForVendor;
+  String get id =>
+      iosDeviceInfo.identifierForVendor ?? UnknownDeviceInfoImpl().id;
 
   @override
   String get imei => imeiNo;
@@ -52,22 +53,24 @@ class AndroidDeviceInfoImpl implements DeviceInfo {
       {required this.androidDeviceInfo, required this.imeiNo});
 
   @override
-  String get brand => androidDeviceInfo.brand;
+  String get brand => androidDeviceInfo.brand ?? UnknownDeviceInfoImpl().brand;
 
   @override
-  String get manufacturer => androidDeviceInfo.manufacturer;
+  String get manufacturer =>
+      androidDeviceInfo.manufacturer ?? UnknownDeviceInfoImpl().manufacturer;
 
   @override
-  String get model => androidDeviceInfo.model;
+  String get model => androidDeviceInfo.model ?? UnknownDeviceInfoImpl().model;
 
   @override
   String get os => 'Android ${androidDeviceInfo.version.release}';
 
   @override
-  int get sdk => androidDeviceInfo.version.sdkInt;
+  int get sdk =>
+      androidDeviceInfo.version.sdkInt ?? UnknownDeviceInfoImpl().sdk;
 
   @override
-  String get id => androidDeviceInfo.id;
+  String get id => androidDeviceInfo.id ?? UnknownDeviceInfoImpl().id;
 
   @override
   String get imei => imeiNo;

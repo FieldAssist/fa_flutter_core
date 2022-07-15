@@ -15,7 +15,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  package_info: ^2.0.2
+
+  flutter_keyboard_visibility: ^5.3.0
 
   # Preferences
   shared_preferences: 2.0.6
@@ -31,8 +32,10 @@ dependencies:
   json_annotation: ^4.4.0
 
   # Device Utilities
-  device_info: ^2.0.3
   in_app_update: ^3.0.0
+  device_info_plus: ^4.0.0
+  device_information: ^0.0.4
+  package_info_plus: ^1.4.2
 
   webview_flutter: ^3.0.4
 
