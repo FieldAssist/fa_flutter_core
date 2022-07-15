@@ -5,10 +5,12 @@ class FaPrivacyPoliciesAndTC extends StatefulWidget {
   const FaPrivacyPoliciesAndTC({
     this.onResult,
     this.url,
+    this.showAcceptAndReject = true,
   });
 
   final Function(bool)? onResult;
   final String? url;
+  final bool showAcceptAndReject;
 
   @override
   State<FaPrivacyPoliciesAndTC> createState() => _FaPrivacyPoliciesAndTCState();
@@ -38,7 +40,7 @@ class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
             ),
         ],
       ),
-      bottomNavigationBar: !_pageLoaded
+      bottomNavigationBar: !(_pageLoaded && widget.showAcceptAndReject)
           ? null
           : Row(
               children: [
