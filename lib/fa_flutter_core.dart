@@ -11,6 +11,7 @@ export 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 export 'package:package_info_plus/package_info_plus.dart';
 
 export 'src/package_info/package_info.dart';
+export 'src/device_info/device_info.dart';
 export 'src/prefs/fa_flutter_prefs.dart';
 export 'src/result/result.dart';
 export 'src/system_info/system_info.dart';
