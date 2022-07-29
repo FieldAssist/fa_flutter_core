@@ -26,14 +26,13 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '2.10.3'
+          flutter-version: '3.0.5'
 
       - name: "Activate remove_from_coverage package"
-        run: |
-          pub global activate remove_from_coverage
+        run: flutter pub global activate remove_from_coverage
 
       - name: 'Flutter Doctor'
         run: flutter doctor -v
