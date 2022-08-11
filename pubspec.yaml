@@ -33,7 +33,7 @@ dependencies:
 
   # Device Utilities
   in_app_update: ^3.0.0
-  device_info_plus: ^4.0.2
+  device_info_plus: ^4.1.0
   device_information: ^0.0.4
   package_info_plus: ^1.4.2
 
