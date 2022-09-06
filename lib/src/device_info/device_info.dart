@@ -13,12 +13,13 @@ abstract class DeviceInfo {
 
   String get id;
 
+  /// If IMEI is not provided then it will send "NA"
   String get imei;
 }
 
 class IosDeviceInfoImpl implements DeviceInfo {
   final IosDeviceInfo iosDeviceInfo;
-  final String imeiNo;
+  final String? imeiNo;
 
   const IosDeviceInfoImpl({required this.iosDeviceInfo, required this.imeiNo});
 
@@ -41,13 +42,14 @@ class IosDeviceInfoImpl implements DeviceInfo {
   String get id =>
       iosDeviceInfo.identifierForVendor ?? UnknownDeviceInfoImpl().id;
 
+  /// If IMEI is not provided then it will send "NA"
   @override
-  String get imei => imeiNo;
+  String get imei => imeiNo ?? UnknownDeviceInfoImpl().imei;
 }
 
 class AndroidDeviceInfoImpl implements DeviceInfo {
   final AndroidDeviceInfo androidDeviceInfo;
-  final String imeiNo;
+  final String? imeiNo;
 
   const AndroidDeviceInfoImpl(
       {required this.androidDeviceInfo, required this.imeiNo});
@@ -72,8 +74,9 @@ class AndroidDeviceInfoImpl implements DeviceInfo {
   @override
   String get id => androidDeviceInfo.id ?? UnknownDeviceInfoImpl().id;
 
+  /// If IMEI is not provided then it will send "NA"
   @override
-  String get imei => imeiNo;
+  String get imei => imeiNo ?? UnknownDeviceInfoImpl().imei;
 }
 
 class UnknownDeviceInfoImpl implements DeviceInfo {

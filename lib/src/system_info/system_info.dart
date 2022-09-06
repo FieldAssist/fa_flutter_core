@@ -1,5 +1,4 @@
 import 'package:fa_flutter_core/fa_flutter_core.dart';
-import 'package:fa_flutter_core/src/device_info/device_info.dart';
 
 class SystemInfo implements DeviceInfo, PackageInformation {
   const SystemInfo({required this.deviceInfo, required this.packageInfo});
