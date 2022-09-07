@@ -9,6 +9,9 @@ export 'package:device_info_plus/device_info_plus.dart';
 export 'package:device_information/device_information.dart';
 export 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 export 'package:package_info_plus/package_info_plus.dart';
+export 'package:flare_flutter/asset_provider.dart';
+export 'package:flare_flutter/flare_cache.dart';
+export 'package:flare_flutter/provider/asset_flare.dart';
 
 export 'src/package_info/package_info.dart';
 export 'src/device_info/device_info.dart';
