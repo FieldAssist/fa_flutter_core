@@ -6,10 +6,10 @@ homepage: https://github.com/FieldAssist/fa_flutter_core.git
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -38,6 +38,40 @@ dependencies:
   package_info_plus: ^1.4.2
 
   webview_flutter: ^3.0.4
+  flare_flutter: ^3.0.2
+  bot_toast: ^4.0.3
+  cached_network_image: ^3.2.1
+  camera: ^0.10.0+1
+  collection: ^1.16.0
+  dartx: ^1.1.0
+  equatable: ^2.0.5
+  expressions: ^0.2.4
+  firebase_crashlytics: ^2.8.9
+  firebase_messaging: ^13.0.0
+  flutter_geocoder: ^0.2.2-nullsafety
+  flutter_svg: ^1.1.4
+  font_awesome_flutter: ^10.1.0
+  geocoding: ^2.0.5
+  geolocator: ^8.2.0
+  get_it: ^7.2.0
+  google_maps_flutter: ^2.2.0
+  image_picker: ^0.8.5+3
+  internet_connection_checker: ^0.0.1+4
+  intl: ^0.17.0
+  jiffy: ^5.0.0
+  lottie: ^1.4.2
+  path_provider: ^2.0.11
+  recase: ^4.0.0
+  screenshot: ^1.2.3
+  scrollable_positioned_list: ^0.3.4
+  sembast: ^3.3.0
+  sembast_web: ^2.0.1+1
+  shimmer: ^2.0.0
+  sizer: ^2.0.15
+  timelines: ^0.1.0
+  url_launcher: ^6.1.5
+  uuid: ^3.0.6
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:
@@ -53,7 +87,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
 # To add assets to your package, add an assets section, like this:
 # assets:
 #   - images/a_dot_burr.jpeg

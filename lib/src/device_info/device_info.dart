@@ -21,7 +21,7 @@ class IosDeviceInfoImpl implements DeviceInfo {
   final IosDeviceInfo iosDeviceInfo;
   final String? imeiNo;
 
-  const IosDeviceInfoImpl({required this.iosDeviceInfo, required this.imeiNo});
+  const IosDeviceInfoImpl({required this.iosDeviceInfo, this.imeiNo});
 
   @override
   String get brand => 'Apple Inc';
