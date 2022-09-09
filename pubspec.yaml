@@ -68,7 +68,6 @@ dependencies:
   sembast_web: ^2.0.1+1
   shimmer: ^2.0.0
   sizer: ^2.0.15
-  sqflite: ^2.0.3+1
   timelines: ^0.1.0
   url_launcher: ^6.1.5
   uuid: ^3.0.6
