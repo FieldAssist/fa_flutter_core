@@ -3,8 +3,6 @@ library fa_flutter_core;
 export 'package:bot_toast/bot_toast.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:camera/camera.dart';
-export 'package:collection/collection.dart' hide IterableZip;
-export 'package:dartx/dartx.dart';
 export 'package:device_info_plus/device_info_plus.dart';
 export 'package:device_information/device_information.dart';
 export 'package:equatable/equatable.dart';
