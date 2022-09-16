@@ -36,48 +36,48 @@ class SharedAppPrefs implements AppPrefs {
   }
 
   @override
-  void setBool(String key, bool? value) {
+  Future<void> setBool(String key, bool? value) async {
     if (value == null) {
       _prefs.remove(key);
       return;
     }
-    _prefs.setBool(key, value);
+    await _prefs.setBool(key, value);
   }
 
   @override
-  void setDouble(String key, double? value) {
+  Future<void> setDouble(String key, double? value) async {
     if (value == null) {
       _prefs.remove(key);
       return;
     }
-    _prefs.setDouble(key, value);
+    await _prefs.setDouble(key, value);
   }
 
   @override
-  void setInt(String key, int? value) {
+  Future<void> setInt(String key, int? value) async {
     if (value == null) {
       _prefs.remove(key);
       return;
     }
-    _prefs.setInt(key, value);
+    await _prefs.setInt(key, value);
   }
 
   @override
-  void setString(String key, String? value) {
+  Future<void> setString(String key, String? value) async {
     if (value == null) {
       _prefs.remove(key);
       return;
     }
-    _prefs.setString(key, value);
+    await _prefs.setString(key, value);
   }
 
   @override
-  void setStringList(String key, List<String>? value) {
+  Future<void> setStringList(String key, List<String>? value) async {
     if (value == null) {
       _prefs.remove(key);
       return;
     }
-    _prefs.setStringList(key, value);
+    await _prefs.setStringList(key, value);
   }
 
   @override
@@ -86,8 +86,8 @@ class SharedAppPrefs implements AppPrefs {
   }
 
   @override
-  void remove(String key) {
-    _prefs.remove(key);
+  Future<void> remove(String key) async {
+    await _prefs.remove(key);
   }
 
   @override
