@@ -13,22 +13,22 @@ abstract class AppPrefs {
   List<String>? getStringList(String key);
 
   //  Setters
-  void setBool(String key, bool? value);
+  Future<void> setBool(String key, bool? value);
 
-  void setInt(String key, int? value);
+  Future<void> setInt(String key, int? value);
 
-  void setDouble(String key, double? value);
+  Future<void> setDouble(String key, double? value);
 
-  void setString(String key, String? value);
+  Future<void> setString(String key, String? value);
 
-  void setStringList(String key, List<String>? value);
+  Future<void> setStringList(String key, List<String>? value);
 
   // MISC
   Future<Map<String, dynamic>> getMap();
 
   Future<void> reload();
 
-  void remove(String key);
+  Future<void> remove(String key);
 
   Future<void> clear();
 }
