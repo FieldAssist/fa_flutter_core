@@ -14,7 +14,6 @@ export 'package:flare_flutter/asset_provider.dart';
 export 'package:flare_flutter/flare_actor.dart';
 export 'package:flare_flutter/flare_cache.dart';
 export 'package:flare_flutter/provider/asset_flare.dart';
-export 'package:flutter_geocoder/geocoder.dart';
 export 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 export 'package:flutter_svg/svg.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';

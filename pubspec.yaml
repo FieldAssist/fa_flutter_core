@@ -48,11 +48,11 @@ dependencies:
   expressions: ^0.2.4
   firebase_crashlytics: ^2.8.9
   firebase_messaging: ^13.0.0
-  flutter_geocoder: ^0.2.2-nullsafety
+#  flutter_geocoder: ^0.2.2-nullsafety
   flutter_svg: ^1.1.4
   font_awesome_flutter: ^10.1.0
   geocoding: ^2.0.5
-  geolocator: ^8.2.0
+  geolocator: ^9.0.2
   get_it: ^7.2.0
   google_maps_flutter: ^2.2.0
   image_picker: ^0.8.5+3
