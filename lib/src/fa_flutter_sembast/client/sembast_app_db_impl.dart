@@ -1,8 +1,6 @@
 import 'package:fa_flutter_core/fa_flutter_core.dart';
 import 'package:path/path.dart';
 
-import '../base/sembast_app_db.dart';
-
 class SembastHelperImpl implements SembastHelper {
   late Database _db;
 

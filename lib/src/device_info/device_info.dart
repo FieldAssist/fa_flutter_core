@@ -55,24 +55,22 @@ class AndroidDeviceInfoImpl implements DeviceInfo {
       {required this.androidDeviceInfo, required this.imeiNo});
 
   @override
-  String get brand => androidDeviceInfo.brand ?? UnknownDeviceInfoImpl().brand;
+  String get brand => androidDeviceInfo.brand;
 
   @override
-  String get manufacturer =>
-      androidDeviceInfo.manufacturer ?? UnknownDeviceInfoImpl().manufacturer;
+  String get manufacturer => androidDeviceInfo.manufacturer;
 
   @override
-  String get model => androidDeviceInfo.model ?? UnknownDeviceInfoImpl().model;
+  String get model => androidDeviceInfo.model;
 
   @override
   String get os => 'Android ${androidDeviceInfo.version.release}';
 
   @override
-  int get sdk =>
-      androidDeviceInfo.version.sdkInt ?? UnknownDeviceInfoImpl().sdk;
+  int get sdk => androidDeviceInfo.version.sdkInt;
 
   @override
-  String get id => androidDeviceInfo.id ?? UnknownDeviceInfoImpl().id;
+  String get id => androidDeviceInfo.id;
 
   /// If IMEI is not provided then it will send "NA"
   @override
