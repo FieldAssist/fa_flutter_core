@@ -19,7 +19,7 @@ dependencies:
   flutter_keyboard_visibility: ^5.3.0
 
   # Preferences
-  shared_preferences: 2.0.6
+  shared_preferences: ^2.0.15
 
   # FA dart core
   fa_dart_core:
@@ -33,9 +33,9 @@ dependencies:
 
   # Device Utilities
   in_app_update: ^3.0.0
-  device_info_plus: ^4.1.0
+  device_info_plus: ^8.0.0
   device_information: ^0.0.4
-  package_info_plus: ^1.4.2
+  package_info_plus: ^3.0.1
 
   webview_flutter: ^3.0.4
   flare_flutter: ^3.0.2
@@ -46,8 +46,8 @@ dependencies:
   dartx: ^1.1.0
   equatable: ^2.0.5
   expressions: ^0.2.4
-  firebase_crashlytics: ^2.8.9
-  firebase_messaging: ^13.0.0
+  firebase_crashlytics: ^3.0.3
+  firebase_messaging: ^14.0.3
 #  flutter_geocoder: ^0.2.2-nullsafety
   flutter_svg: ^1.1.4
   font_awesome_flutter: ^10.1.0
