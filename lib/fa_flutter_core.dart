@@ -47,6 +47,7 @@ export 'package:uuid/uuid.dart';
 export 'package:webview_flutter/webview_flutter.dart';
 
 export 'src/device_info/device_info.dart';
+export 'src/fa_firebase_analytics/fa_firebase_analytics.dart';
 export 'src/fa_flutter_sembast/fa_flutter_sembast.dart';
 export 'src/in_app_update/in_app_updator.dart';
 export 'src/package_info/package_info.dart';
