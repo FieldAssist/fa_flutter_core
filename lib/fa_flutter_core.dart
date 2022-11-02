@@ -8,6 +8,8 @@ export 'package:device_information/device_information.dart';
 export 'package:equatable/equatable.dart';
 export 'package:fa_dart_core/fa_dart_core.dart';
 export 'package:fa_dart_logger/fa_dart_logger.dart';
+export 'package:firebase_analytics/firebase_analytics.dart';
+export 'package:firebase_core/firebase_core.dart';
 export 'package:firebase_crashlytics/firebase_crashlytics.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:flare_flutter/asset_provider.dart';
