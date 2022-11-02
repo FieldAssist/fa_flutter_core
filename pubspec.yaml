@@ -46,6 +46,7 @@ dependencies:
   dartx: ^1.1.0
   equatable: ^2.0.5
   expressions: ^0.2.4
+  firebase_analytics: ^10.0.3
   firebase_crashlytics: ^3.0.3
   firebase_messaging: ^14.0.3
 #  flutter_geocoder: ^0.2.2-nullsafety
