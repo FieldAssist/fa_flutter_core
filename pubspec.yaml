@@ -1,7 +1,6 @@
 name: fa_flutter_core
 description: Official FA Flutter core package.
 version: 2.0.2
-author: Ayush P Gupta <ayushpguptaapg@gmail.com>
 homepage: https://github.com/FieldAssist/fa_flutter_core.git
 
 # The following line prevents the package from being accidentally published to
@@ -9,7 +8,7 @@ homepage: https://github.com/FieldAssist/fa_flutter_core.git
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -32,12 +31,12 @@ dependencies:
   json_annotation: ^4.4.0
 
   # Device Utilities
-  in_app_update: ^3.0.0
+  in_app_update: ^4.0.1
   device_info_plus: ^8.0.0
   device_information: ^0.0.4
   package_info_plus: ^3.0.1
 
-  webview_flutter: ^3.0.4
+  webview_flutter: ^4.0.2
   flare_flutter: ^3.0.2
   bot_toast: ^4.0.3
   cached_network_image: ^3.2.1
@@ -50,17 +49,17 @@ dependencies:
   firebase_crashlytics: ^3.0.3
   firebase_messaging: ^14.0.3
 #  flutter_geocoder: ^0.2.2-nullsafety
-  flutter_svg: ^1.1.4
+  flutter_svg: ^2.0.0+1
   font_awesome_flutter: ^10.1.0
   geocoding: ^2.0.5
   geolocator: ^9.0.2
   get_it: ^7.2.0
   google_maps_flutter: ^2.2.0
   image_picker: ^0.8.5+3
-  internet_connection_checker: ^0.0.1+4
+  internet_connection_checker: ^1.0.0+1
   intl: ^0.17.0
   jiffy: ^5.0.0
-  lottie: ^1.4.2
+  lottie: ^2.2.0
   path_provider: ^2.0.11
   recase: ^4.0.0
   screenshot: ^1.2.3
