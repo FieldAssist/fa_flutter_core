@@ -18,21 +18,32 @@ class FaPrivacyPoliciesAndTC extends StatefulWidget {
 
 class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
   bool _pageLoaded = false;
+  late final WebViewController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(NavigationDelegate(
+        onPageFinished: (_) {
+          setState(() {
+            _pageLoaded = true;
+          });
+        },
+      ))
+      ..loadRequest(
+        Uri.parse(widget.url ?? 'https://www.fieldassist.in/privacy-policy/'),
+      );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          WebView(
-            initialUrl:
-                widget.url ?? 'https://www.fieldassist.in/privacy-policy/',
-            javascriptMode: JavascriptMode.unrestricted,
-            onPageFinished: (_) {
-              setState(() {
-                _pageLoaded = true;
-              });
-            },
+          WebViewWidget(
+            controller: _controller,
           ),
           if (!_pageLoaded)
             Center(
