@@ -75,8 +75,8 @@ dependencies:
   provider: ^6.0.3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+#  flutter_test:
+#    sdk: flutter
 
   # Model Utilities
   build_runner: ^2.1.7
