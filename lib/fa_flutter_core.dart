@@ -21,7 +21,7 @@ export 'package:flutter_svg/svg.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:geocoding/geocoding.dart';
-export 'package:geolocator/geolocator.dart';
+// export 'package:geolocator/geolocator.dart';
 export 'package:get_it/get_it.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:image_picker/image_picker.dart';

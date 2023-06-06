@@ -52,7 +52,7 @@ dependencies:
   flutter_svg: ^2.0.0+1
   font_awesome_flutter: ^10.3.0
   geocoding: ^2.0.5
-  geolocator: ^9.0.2
+#  geolocator: ^9.0.2
   get_it: ^7.2.0
   google_maps_flutter: ^2.2.3
   image_picker: ^0.8.6+1
