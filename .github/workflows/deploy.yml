@@ -6,9 +6,9 @@ name: Test
 # events but only for the master branch
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,24 +28,24 @@ jobs:
           java-version: 1.8
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
 
       - name: "Activate remove_from_coverage package"
         run: flutter pub global activate remove_from_coverage
 
-      - name: 'Flutter Doctor'
+      - name: "Flutter Doctor"
         run: flutter doctor -v
 
-      - name: 'Flutter Pub Get'
+      - name: "Flutter Pub Get"
         run: flutter pub get
 
-      - name: 'Flutter Format Check'
-        run: flutter format --set-exit-if-changed --dry-run .
+      - name: "Flutter Format Check"
+        run: dart format --set-exit-if-changed -o none .
 
-      - name: 'Run Test(s)'
+      - name: "Run Test(s)"
         run: flutter test --coverage
 
-      - name: 'Remove ignored files from coverage'
+      - name: "Remove ignored files from coverage"
         run: |
           remove_from_coverage -f coverage/lcov.info -r '\.g\.dart$' -r '\.freezed\.dart$'
 
