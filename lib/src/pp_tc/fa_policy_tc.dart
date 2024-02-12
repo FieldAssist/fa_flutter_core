@@ -33,7 +33,7 @@ class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
         },
       ))
       ..loadRequest(
-        Uri.parse(widget.url ?? 'https://www.fieldassist.in/privacy-policy/'),
+        Uri.parse(widget.url ?? 'https://www.fieldassist.com/privacy-policy/'),
       );
   }
 
