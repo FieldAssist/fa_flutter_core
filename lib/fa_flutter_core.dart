@@ -27,7 +27,6 @@ export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:image_picker/image_picker.dart';
 export 'package:internet_connection_checker/internet_connection_checker.dart';
 export 'package:intl/intl.dart';
-export 'package:jiffy/jiffy.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:lottie/lottie.dart' hide Marker;
 export 'package:package_info_plus/package_info_plus.dart';
