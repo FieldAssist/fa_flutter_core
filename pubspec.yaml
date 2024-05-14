@@ -60,7 +60,7 @@ dependencies:
   lottie: ^3.1.0
   path_provider: ^2.1.2
   recase: ^4.1.0
-  screenshot: ^2.3.0
+  screenshot: 2.3.0
   scrollable_positioned_list: ^0.3.8
   sembast: ^3.7.1
   sembast_web: ^2.3.0
