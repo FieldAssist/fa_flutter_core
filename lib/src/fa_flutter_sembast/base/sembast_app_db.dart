@@ -86,4 +86,8 @@ abstract class SembastHelper {
 
   /// Delete records
   Future<List<K?>> deleteList<K, V>(RecordsRef<K, V> recordsRef);
+
+  /// Get the database instance.
+  @Deprecated("Temporary fix to get the database instance.")
+  Database getDb();
 }
