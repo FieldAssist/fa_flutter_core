@@ -114,4 +114,9 @@ class SembastHelperImpl implements SembastHelper {
     final values = await recordsRef.delete(_db);
     return values;
   }
+
+  @override
+  Database getDb() {
+    return _db;
+  }
 }
