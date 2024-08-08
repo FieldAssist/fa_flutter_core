@@ -45,9 +45,9 @@ dependencies:
   dartx: ^1.2.0
   equatable: ^2.0.5
   expressions: ^0.2.5+1
-  firebase_analytics: ^10.9.0
-  firebase_crashlytics: ^3.4.20
-  firebase_messaging: ^14.7.21
+  firebase_analytics: ^11.2.1
+  firebase_crashlytics: ^4.0.4
+  firebase_messaging: ^15.0.4
   #  flutter_geocoder: ^0.2.2-nullsafety
   flutter_svg: ^2.0.10+1
   font_awesome_flutter: ^10.7.0

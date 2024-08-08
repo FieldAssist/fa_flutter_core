@@ -24,7 +24,7 @@ abstract class AnalyticsServiceImpl extends AnalyticsService {
 
   @protected
   Future<void>? logEvent(
-      {required String? name, Map<String, dynamic>? parameters}) {
+      {required String? name, Map<String, Object>? parameters}) {
     if (isMobile) {
       return analytics
           .logEvent(name: name!, parameters: parameters!)
