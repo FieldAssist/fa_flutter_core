@@ -60,3 +60,4 @@ export 'src/utils/expression_utils.dart';
 export 'src/utils/platform_utils.dart';
 export 'src/void_result/void_result.dart';
 export 'src/extension/string_extension.dart';
+export 'src/fa_route/material_route.dart';
