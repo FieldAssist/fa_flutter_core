@@ -58,5 +58,6 @@ export 'src/result/result.dart';
 export 'src/system_info/system_info.dart';
 export 'src/utils/expression_utils.dart';
 export 'src/utils/platform_utils.dart';
+export 'src/utils/image_utils.dart';
 export 'src/void_result/void_result.dart';
 export 'src/extension/string_extension.dart';
