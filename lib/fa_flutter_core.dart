@@ -4,7 +4,6 @@ export 'package:bot_toast/bot_toast.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:camera/camera.dart';
 export 'package:device_info_plus/device_info_plus.dart';
-export 'package:device_information/device_information.dart';
 export 'package:equatable/equatable.dart';
 export 'package:fa_dart_core/fa_dart_core.dart';
 export 'package:fa_dart_logger/fa_dart_logger.dart';
