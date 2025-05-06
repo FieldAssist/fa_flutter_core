@@ -64,7 +64,6 @@ dependencies:
   sembast_web: ^2.4.1
   shimmer: ^3.0.0
   sizer: ^3.0.5
-  timelines: ^0.1.0 # last updated 4 yrs ago
   url_launcher: ^6.3.1
   uuid: ^4.5.1
   provider: ^6.1.5

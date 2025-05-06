@@ -37,7 +37,6 @@ export 'package:sembast/utils/value_utils.dart';
 export 'package:sembast_web/sembast_web.dart';
 export 'package:shimmer/shimmer.dart';
 export 'package:sizer/sizer.dart';
-export 'package:timelines/timelines.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:uuid/uuid.dart';
 export 'package:webview_flutter/webview_flutter.dart';
