@@ -11,7 +11,7 @@ abstract class AnalyticsService {
 
   Future<void>? logEvent({
     required String name,
-    Map<String, dynamic>? parameters,
+    Map<String, Object>? parameters,
   });
 
   FirebaseAnalytics getAnalyticsClient();
