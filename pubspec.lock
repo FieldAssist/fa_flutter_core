@@ -21,10 +21,10 @@ packages:
     dependency: transitive
     description:
       name: analyzer
-      sha256: "13c1e6c6fd460522ea840abec3f677cc226f5fec7872c04ad7b425517ccf54f7"
+      sha256: "904ae5bb474d32c38fb9482e2d925d5454cda04ddd0e55d2e6826bc72f6ba8c0"
       url: "https://pub.dev"
     source: hosted
-    version: "7.4.4"
+    version: "7.4.5"
   ansicolor:
     dependency: transitive
     description:
@@ -357,8 +357,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "feat/version_upgrade"
-      resolved-ref: "2b9a8ea11c684b8127a761f805cf79e6237c4eb4"
+      ref: main
+      resolved-ref: "9ee7f69fe28738e44c3258cc816d0e91df5b2d85"
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"

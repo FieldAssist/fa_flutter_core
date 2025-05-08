@@ -253,8 +253,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "feat/version_upgrade"
-      resolved-ref: "2b9a8ea11c684b8127a761f805cf79e6237c4eb4"
+      ref: main
+      resolved-ref: "9ee7f69fe28738e44c3258cc816d0e91df5b2d85"
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
