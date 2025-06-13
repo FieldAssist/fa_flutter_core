@@ -63,7 +63,7 @@ dependencies:
   sembast: ^3.8.5
   sembast_web: ^2.4.1
   shimmer: ^3.0.0
-  sizer: ^3.0.5
+  sizer: 2.0.15
   url_launcher: ^6.3.1
   uuid: ^4.5.1
   provider: ^6.1.5
