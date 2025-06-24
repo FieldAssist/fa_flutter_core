@@ -36,7 +36,7 @@ class IosDeviceInfoImpl implements DeviceInfo {
   String get os => '${iosDeviceInfo.systemName} ${iosDeviceInfo.systemVersion}';
 
   @override
-  int? get sdk => 0;
+  int? get sdk => int.parse(iosDeviceInfo.systemVersion);
 
   @override
   String get id =>
