@@ -8,8 +8,8 @@ homepage: https://github.com/FieldAssist/fa_flutter_core.git
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
 
 dependencies:
   flutter:
@@ -24,14 +24,14 @@ dependencies:
   fa_dart_core:
     git:
       url: https://github.com/FieldAssist/fa_dart_core.git
-      ref: main
+      ref: flutter_3.35.7
 
   # Model Utilities
-  freezed_annotation: ^3.0.0
+  freezed_annotation: ^3.1.0
   json_annotation: ^4.9.0
 
   # Device Utilities
-  in_app_update: ^4.2.3
+  in_app_update: ^4.2.4
   device_info_plus: ^11.4.0
   package_info_plus: ^8.3.0
 
@@ -59,7 +59,7 @@ dependencies:
   path_provider: ^2.1.5
   recase: ^4.1.0
   screenshot: ^3.0.0
-  scrollable_positioned_list: ^0.3.8 #last updated 24 months ago
+  scrollable_positioned_list: ^0.3.8
   sembast: ^3.8.5
   sembast_web: ^2.4.1
   shimmer: ^3.0.0
@@ -68,15 +68,15 @@ dependencies:
   uuid: ^4.5.1
   provider: ^6.1.5
   flutter_image_compress: ^2.4.0
-  permission_handler: ^12.0.0+1
+  permission_handler: ^12.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # Model Utilities
-  build_runner: ^2.4.15
-  freezed: ^3.0.6
+  build_runner: ^2.10.2
+  freezed: ^3.2.3
   json_serializable: ^6.9.5
 
 # For information on the generic Dart part of this file, see the
