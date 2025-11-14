@@ -253,8 +253,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "flutter_3.35.7"
-      resolved-ref: b876103b60cfd57c7c04907e2cd9781cee5a983a
+      ref: main
+      resolved-ref: e7fef8b027a4c04cb9e08466adcf6af897886c1e
       url: "https://github.com/FieldAssist/fa_dart_core.git"
     source: git
     version: "2.0.0+2"
