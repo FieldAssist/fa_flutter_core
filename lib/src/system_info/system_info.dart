@@ -1,10 +1,15 @@
 import 'package:fa_flutter_core/fa_flutter_core.dart';
 
 class SystemInfo implements DeviceInfo, PackageInformation {
-  const SystemInfo({required this.deviceInfo, required this.packageInfo});
+  const SystemInfo({
+    required this.deviceInfo,
+    required this.packageInfo,
+    this.isSerialNoRequired = false,
+  });
 
   final DeviceInfo deviceInfo;
   final PackageInformation packageInfo;
+  final bool isSerialNoRequired;
 
   @override
   String get version => packageInfo.version;
@@ -48,7 +53,7 @@ class SystemInfo implements DeviceInfo, PackageInformation {
         "Model": model,
         "OSVersion": os,
         "SdkVersion": sdk,
-        "Serial": id,
+        "Serial": isSerialNoRequired ? id : "",
         "IMEINo": imei,
       };
 }
