@@ -69,15 +69,19 @@ dependencies:
   provider: ^6.1.5
   flutter_image_compress: ^2.4.0
   permission_handler: ^12.0.1
+  realm: ^20.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # Model Utilities
-  build_runner: ^2.10.2
-  freezed: ^3.2.3
-  json_serializable: ^6.9.5
+  # Upper bounds are left to pub on purpose: realm_generator pins
+  # `source_gen ^2.0.0`, so freezed/json_serializable have to resolve to
+  # versions that agree with it. Raising these floors will break `pub get`.
+  build_runner: ^2.4.15
+  freezed: ^3.0.6
+  json_serializable: ^6.9.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

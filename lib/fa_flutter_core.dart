@@ -41,6 +41,7 @@ export 'package:url_launcher/url_launcher.dart';
 export 'package:uuid/uuid.dart';
 export 'package:webview_flutter/webview_flutter.dart';
 
+export 'src/activity/fa_flutter_activity.dart';
 export 'src/device_info/device_info.dart';
 export 'src/extension/num_extension.dart';
 export 'src/extension/string_extension.dart';
