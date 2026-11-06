@@ -1,0 +1,27 @@
+name: fa_flutter_activity
+description: Cross-app activity tracking (GT + FA One) backed by a shared Realm store. Split out of fa_flutter_core so realm stays out of core's dependency graph.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.47.9"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Same repo: always the core commit this package was checked out with.
+  fa_flutter_core:
+    path: ../..
+  freezed_annotation: ^3.1.0
+  realm: ^20.2.0
+
+dev_dependencies:
+  # realm 20.2.0 (its final release) ships realm_generator, which pins `build` 2.4.2 /
+  # `source_gen ^2`: these are the newest versions that resolve with it, and they only run
+  # on an SDK whose analyzer understands this package (Dart <= 3.9). The committed
+  # *.g.dart / *.freezed.dart / *.realm.dart files are current; regenerating needs realm
+  # replaced or an older SDK.
+  build_runner: ^2.4.15
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5

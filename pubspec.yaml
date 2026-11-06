@@ -28,6 +28,8 @@ dependencies:
 
   # Model Utilities
   freezed_annotation: ^3.1.0
+  # Floor kept at 4.9: apps that use realm directly (GT, FA One, db_utils) are capped at
+  # json_serializable <6.11.3 by realm_generator, which needs json_annotation <4.10.
   json_annotation: ^4.9.0
 
   # Device Utilities
@@ -69,19 +71,15 @@ dependencies:
   provider: ^6.1.5+1
   flutter_image_compress: ^2.5.1
   permission_handler: ^13.0.2
-  realm: ^20.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # Model Utilities
-  # Upper bounds are left to pub on purpose: realm_generator pins
-  # `source_gen ^2.0.0`, so freezed/json_serializable have to resolve to
-  # versions that agree with it. Raising these floors will break `pub get`.
-  build_runner: ^2.4.15
-  freezed: ^3.0.6
-  json_serializable: ^6.9.5
+  build_runner: ^2.17.1
+  freezed: ^4.0.3
+  json_serializable: ^6.15.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

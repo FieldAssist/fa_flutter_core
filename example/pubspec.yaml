@@ -31,8 +31,6 @@ dependencies:
 
   fa_flutter_core:
     path: ../
-  realm: ^20.2.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

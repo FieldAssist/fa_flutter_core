@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'result.dart';
 
@@ -7,322 +9,321 @@ part of 'result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
 /// @nodoc
-class _$ResultTearOff {
-  const _$ResultTearOff();
+mixin _$Result<T> implements DiagnosticableTreeMixin {
 
-  ResultSuccess<T> success<T>({required T data}) {
-    return ResultSuccess<T>(
-      data: data,
-    );
-  }
 
-  ResultFailure<T> failure<T>({required String reason}) {
-    return ResultFailure<T>(
-      reason: reason,
-    );
-  }
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+    ..add(DiagnosticsProperty('type', 'Result<$T>'))
+    ;
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is Result<T>);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+    return 'Result<$T>()';
+}
+
+
 }
 
 /// @nodoc
-const $Result = _$ResultTearOff();
+class $ResultCopyWith<T,$Res>  {
+$ResultCopyWith(Result<T> _, $Res Function(Result<T>) __);
+}
 
-/// @nodoc
-mixin _$Result<T> {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(String reason) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(String reason)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ResultSuccess<T> value) success,
-    required TResult Function(ResultFailure<T> value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResultSuccess<T> value)? success,
-    TResult Function(ResultFailure<T> value)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+/// Adds pattern-matching-related methods to [Result].
+extension ResultPatterns<T> on Result<T> {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ResultSuccess<T> value)?  success,TResult Function( ResultFailure<T> value)?  failure,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case ResultSuccess() when success != null:
+return success(_that);case ResultFailure() when failure != null:
+return failure(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ResultSuccess<T> value)  success,required TResult Function( ResultFailure<T> value)  failure,}){
+final _that = this;
+switch (_that) {
+case ResultSuccess():
+return success(_that);case ResultFailure():
+return failure(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ResultSuccess<T> value)?  success,TResult? Function( ResultFailure<T> value)?  failure,}){
+final _that = this;
+switch (_that) {
+case ResultSuccess() when success != null:
+return success(_that);case ResultFailure() when failure != null:
+return failure(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( T data)?  success,TResult Function( String reason)?  failure,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case ResultSuccess() when success != null:
+return success(_that.data);case ResultFailure() when failure != null:
+return failure(_that.reason);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( T data)  success,required TResult Function( String reason)  failure,}) {final _that = this;
+switch (_that) {
+case ResultSuccess():
+return success(_that.data);case ResultFailure():
+return failure(_that.reason);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( T data)?  success,TResult? Function( String reason)?  failure,}) {final _that = this;
+switch (_that) {
+case ResultSuccess() when success != null:
+return success(_that.data);case ResultFailure() when failure != null:
+return failure(_that.reason);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class $ResultCopyWith<T, $Res> {
-  factory $ResultCopyWith(Result<T> value, $Res Function(Result<T>) then) =
-      _$ResultCopyWithImpl<T, $Res>;
+
+
+class ResultSuccess<T> with DiagnosticableTreeMixin implements Result<T> {
+  const ResultSuccess({required this.data});
+  
+
+ final  T data;
+
+/// Create a copy of Result
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ResultSuccessCopyWith<T, ResultSuccess<T>> get copyWith => _$ResultSuccessCopyWithImpl<T, ResultSuccess<T>>(this, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+    ..add(DiagnosticsProperty('type', 'Result<$T>.success'))
+    ..add(DiagnosticsProperty('data', data));
 }
 
-/// @nodoc
-class _$ResultCopyWithImpl<T, $Res> implements $ResultCopyWith<T, $Res> {
-  _$ResultCopyWithImpl(this._value, this._then);
-
-  final Result<T> _value;
-  // ignore: unused_field
-  final $Res Function(Result<T>) _then;
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ResultSuccess<T>&&const DeepCollectionEquality().equals(other.data, data));
 }
 
-/// @nodoc
-abstract class $ResultSuccessCopyWith<T, $Res> {
-  factory $ResultSuccessCopyWith(
-          ResultSuccess<T> value, $Res Function(ResultSuccess<T>) then) =
-      _$ResultSuccessCopyWithImpl<T, $Res>;
-  $Res call({T data});
+
+@override
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
 }
 
-/// @nodoc
-class _$ResultSuccessCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res>
-    implements $ResultSuccessCopyWith<T, $Res> {
-  _$ResultSuccessCopyWithImpl(
-      ResultSuccess<T> _value, $Res Function(ResultSuccess<T>) _then)
-      : super(_value, (v) => _then(v as ResultSuccess<T>));
-
-  @override
-  ResultSuccess<T> get _value => super._value as ResultSuccess<T>;
-
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(ResultSuccess<T>(
-      data: data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResultSuccess<T>
-    with DiagnosticableTreeMixin
-    implements ResultSuccess<T> {
-  const _$ResultSuccess({required this.data});
-
-  @override
-  final T data;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
     return 'Result<$T>.success(data: $data)';
-  }
+}
 
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
+
+}
+
+/// @nodoc
+abstract mixin class $ResultSuccessCopyWith<T,$Res> implements $ResultCopyWith<T, $Res> {
+  factory $ResultSuccessCopyWith(ResultSuccess<T> value, $Res Function(ResultSuccess<T>) _then) = _$ResultSuccessCopyWithImpl;
+@useResult
+$Res call({
+ T data
+});
+
+
+
+
+}
+/// @nodoc
+class _$ResultSuccessCopyWithImpl<T,$Res>
+    implements $ResultSuccessCopyWith<T, $Res> {
+  _$ResultSuccessCopyWithImpl(this._self, this._then);
+
+  final ResultSuccess<T> _self;
+  final $Res Function(ResultSuccess<T>) _then;
+
+/// Create a copy of Result
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = freezed,}) {
+  return _then(ResultSuccess<T>(
+data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as T,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class ResultFailure<T> with DiagnosticableTreeMixin implements Result<T> {
+  const ResultFailure({required this.reason});
+  
+
+ final  String reason;
+
+/// Create a copy of Result
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ResultFailureCopyWith<T, ResultFailure<T>> get copyWith => _$ResultFailureCopyWithImpl<T, ResultFailure<T>>(this, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     properties
-      ..add(DiagnosticsProperty('type', 'Result<$T>.success'))
-      ..add(DiagnosticsProperty('data', data));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ResultSuccess<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(data);
-
-  @JsonKey(ignore: true)
-  @override
-  $ResultSuccessCopyWith<T, ResultSuccess<T>> get copyWith =>
-      _$ResultSuccessCopyWithImpl<T, ResultSuccess<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(String reason) failure,
-  }) {
-    return success(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(String reason)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ResultSuccess<T> value) success,
-    required TResult Function(ResultFailure<T> value) failure,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResultSuccess<T> value)? success,
-    TResult Function(ResultFailure<T> value)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+    ..add(DiagnosticsProperty('type', 'Result<$T>.failure'))
+    ..add(DiagnosticsProperty('reason', reason));
 }
 
-abstract class ResultSuccess<T> implements Result<T> {
-  const factory ResultSuccess({required T data}) = _$ResultSuccess<T>;
-
-  T get data => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ResultSuccessCopyWith<T, ResultSuccess<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ResultFailure<T>&&(identical(other.reason, reason) || other.reason == reason));
 }
 
-/// @nodoc
-abstract class $ResultFailureCopyWith<T, $Res> {
-  factory $ResultFailureCopyWith(
-          ResultFailure<T> value, $Res Function(ResultFailure<T>) then) =
-      _$ResultFailureCopyWithImpl<T, $Res>;
-  $Res call({String reason});
+
+@override
+int get hashCode {
+    return Object.hash(runtimeType,reason);
 }
 
-/// @nodoc
-class _$ResultFailureCopyWithImpl<T, $Res> extends _$ResultCopyWithImpl<T, $Res>
-    implements $ResultFailureCopyWith<T, $Res> {
-  _$ResultFailureCopyWithImpl(
-      ResultFailure<T> _value, $Res Function(ResultFailure<T>) _then)
-      : super(_value, (v) => _then(v as ResultFailure<T>));
-
-  @override
-  ResultFailure<T> get _value => super._value as ResultFailure<T>;
-
-  @override
-  $Res call({
-    Object? reason = freezed,
-  }) {
-    return _then(ResultFailure<T>(
-      reason: reason == freezed
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ResultFailure<T>
-    with DiagnosticableTreeMixin
-    implements ResultFailure<T> {
-  const _$ResultFailure({required this.reason});
-
-  @override
-  final String reason;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
     return 'Result<$T>.failure(reason: $reason)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Result<$T>.failure'))
-      ..add(DiagnosticsProperty('reason', reason));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ResultFailure<T> &&
-            (identical(other.reason, reason) ||
-                const DeepCollectionEquality().equals(other.reason, reason)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(reason);
-
-  @JsonKey(ignore: true)
-  @override
-  $ResultFailureCopyWith<T, ResultFailure<T>> get copyWith =>
-      _$ResultFailureCopyWithImpl<T, ResultFailure<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(String reason) failure,
-  }) {
-    return failure(reason);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(String reason)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(reason);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ResultSuccess<T> value) success,
-    required TResult Function(ResultFailure<T> value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ResultSuccess<T> value)? success,
-    TResult Function(ResultFailure<T> value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class ResultFailure<T> implements Result<T> {
-  const factory ResultFailure({required String reason}) = _$ResultFailure<T>;
 
-  String get reason => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ResultFailureCopyWith<T, ResultFailure<T>> get copyWith =>
-      throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+abstract mixin class $ResultFailureCopyWith<T,$Res> implements $ResultCopyWith<T, $Res> {
+  factory $ResultFailureCopyWith(ResultFailure<T> value, $Res Function(ResultFailure<T>) _then) = _$ResultFailureCopyWithImpl;
+@useResult
+$Res call({
+ String reason
+});
+
+
+
+
+}
+/// @nodoc
+class _$ResultFailureCopyWithImpl<T,$Res>
+    implements $ResultFailureCopyWith<T, $Res> {
+  _$ResultFailureCopyWithImpl(this._self, this._then);
+
+  final ResultFailure<T> _self;
+  final $Res Function(ResultFailure<T>) _then;
+
+/// Create a copy of Result
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? reason = null,}) {
+  return _then(ResultFailure<T>(
+reason: null == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on
