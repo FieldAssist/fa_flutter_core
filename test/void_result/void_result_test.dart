@@ -5,20 +5,26 @@ void main() {
   group('VoidResult', () {
     test('VoidResult should call success when success', () {
       final result = VoidResult.success();
-      result.when(success: () {
-        expect(true, true);
-      }, failure: (reason) {
-        neverCalled();
-      });
+      result.when(
+        success: () {
+          expect(true, true);
+        },
+        failure: (reason) {
+          neverCalled();
+        },
+      );
     });
 
     test('VoidResult should display correct reason when failed', () {
       final result = VoidResult.failure(reason: 'My Reason');
-      result.when(success: () {
-        neverCalled();
-      }, failure: (reason) {
-        expect(reason, 'My Reason');
-      });
+      result.when(
+        success: () {
+          neverCalled();
+        },
+        failure: (reason) {
+          expect(reason, 'My Reason');
+        },
+      );
     });
   });
 }

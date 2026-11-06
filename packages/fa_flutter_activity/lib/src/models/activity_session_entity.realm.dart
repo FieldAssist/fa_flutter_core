@@ -75,9 +75,9 @@ class ActivitySessionEntity extends _ActivitySessionEntity
       RealmObjectBase.getChanges<ActivitySessionEntity>(this);
 
   @override
-  Stream<RealmObjectChanges<ActivitySessionEntity>> changesFor(
-          [List<String>? keyPaths]) =>
-      RealmObjectBase.getChangesFor<ActivitySessionEntity>(this, keyPaths);
+  Stream<RealmObjectChanges<ActivitySessionEntity>> changesFor([
+    List<String>? keyPaths,
+  ]) => RealmObjectBase.getChangesFor<ActivitySessionEntity>(this, keyPaths);
 
   @override
   ActivitySessionEntity freeze() =>
@@ -122,16 +122,24 @@ class ActivitySessionEntity extends _ActivitySessionEntity
   static final schema = () {
     RealmObjectBase.registerFactory(ActivitySessionEntity._);
     register(_toEJson, _fromEJson);
-    return const SchemaObject(ObjectType.realmObject, ActivitySessionEntity,
-        'ActivitySessionEntity', [
-      SchemaProperty('guid', RealmPropertyType.string, primaryKey: true),
-      SchemaProperty('name', RealmPropertyType.string),
-      SchemaProperty('startTime', RealmPropertyType.int),
-      SchemaProperty('source', RealmPropertyType.string),
-      SchemaProperty('moduleEnum', RealmPropertyType.string),
-      SchemaProperty('subModuleEnum', RealmPropertyType.string, optional: true),
-      SchemaProperty('endTime', RealmPropertyType.int, optional: true),
-    ]);
+    return const SchemaObject(
+      ObjectType.realmObject,
+      ActivitySessionEntity,
+      'ActivitySessionEntity',
+      [
+        SchemaProperty('guid', RealmPropertyType.string, primaryKey: true),
+        SchemaProperty('name', RealmPropertyType.string),
+        SchemaProperty('startTime', RealmPropertyType.int),
+        SchemaProperty('source', RealmPropertyType.string),
+        SchemaProperty('moduleEnum', RealmPropertyType.string),
+        SchemaProperty(
+          'subModuleEnum',
+          RealmPropertyType.string,
+          optional: true,
+        ),
+        SchemaProperty('endTime', RealmPropertyType.int, optional: true),
+      ],
+    );
   }();
 
   @override

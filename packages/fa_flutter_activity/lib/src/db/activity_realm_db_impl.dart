@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:realm/realm.dart';
 
-import '../../../../fa_flutter_core.dart';
+import 'package:fa_flutter_core/fa_flutter_core.dart';
+import 'package:fa_flutter_activity/fa_flutter_activity.dart';
 
 final AppLog _logger = AppLogImpl(packageName: 'fa_activity');
 

@@ -51,8 +51,10 @@ class AndroidDeviceInfoImpl implements DeviceInfo {
   final AndroidDeviceInfo androidDeviceInfo;
   final String? imeiNo;
 
-  const AndroidDeviceInfoImpl(
-      {required this.androidDeviceInfo, required this.imeiNo});
+  const AndroidDeviceInfoImpl({
+    required this.androidDeviceInfo,
+    required this.imeiNo,
+  });
 
   @override
   String get brand => androidDeviceInfo.brand;

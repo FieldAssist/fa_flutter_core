@@ -25,10 +25,7 @@ abstract class SembastHelper {
   /// Create a record reference.
   ///
   /// Key cannot be null.
-  RecordRef<K, V> record<K, V>(
-    StoreRef<K, V> mapStoreFactory,
-    K key,
-  );
+  RecordRef<K, V> record<K, V>(StoreRef<K, V> mapStoreFactory, K key);
 
   /// Create a reference to multiple records
   ///
@@ -43,9 +40,7 @@ abstract class SembastHelper {
   Future<int> deletStoreFactory<K, V>(StoreRef<K, V> mapStoreFactory);
 
   /// Delete the store and its content
-  Future<void> dropStoreFactory<K, V>(
-    StoreRef<K, V> mapStoreFactory,
-  );
+  Future<void> dropStoreFactory<K, V>(StoreRef<K, V> mapStoreFactory);
 
   //------------ Record Functions ------------
 
@@ -54,11 +49,7 @@ abstract class SembastHelper {
   /// if [merge] is true and the field exists, data is merged
   ///
   /// Returns the updated value.
-  Future<V> put<K, V>(
-    RecordRef<K, V> recordRef,
-    V value, {
-    bool? merge,
-  });
+  Future<V> put<K, V>(RecordRef<K, V> recordRef, V value, {bool? merge});
 
   /// Get a record value from the database.
   Future<V?> get<K, V>(RecordRef<K, V> recordRef);

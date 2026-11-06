@@ -1,4 +1,5 @@
-import '../../../fa_flutter_core.dart';
+import 'package:fa_flutter_core/fa_flutter_core.dart';
+import 'package:fa_flutter_activity/fa_flutter_activity.dart';
 
 typedef ActivityUploader = Future<void> Function(
   List<ActivitySession> activities,

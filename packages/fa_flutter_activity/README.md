@@ -4,7 +4,19 @@ Tracks how long users spend in each part of the app, across **every FieldAssist
 app sharing the process**, buffers it locally, and hands batches to the host app
 to upload.
 
-## Why it lives in core
+## Why it is one shared package
+
+```yaml
+fa_flutter_activity:
+  git:
+    url: https://github.com/FieldAssist/fa_flutter_core.git
+    path: packages/fa_flutter_activity
+    ref: main
+```
+
+It lives in the `fa_flutter_core` repo but is its own package, so realm (and the old
+`analyzer`/`build_runner` that realm 20.2.0 pins) stays out of every app that only needs
+core. Apps using it must also list `realm` directly — `dart run realm install` requires it.
 
 FA One is a git dependency of GT and is mounted inside it, so both run in one
 process. That means they already share:
@@ -14,8 +26,8 @@ process. That means they already share:
 - one Realm database — `fa_flutter_activity.realm`, holding the closed sessions
   waiting to be uploaded.
 
-Putting the repository here gives them a **single instance over that shared
-state**. That is what makes this work:
+Both apps depending on this one package gives them a **single instance over that
+shared state**. That is what makes this work:
 
 ```dart
 // in fa_flutter_one

@@ -22,17 +22,13 @@ class SembastHelperImpl implements SembastHelper {
   }
 
   @override
-  Future<int> deletStoreFactory<K, V>(
-    StoreRef<K, V> mapStoreFactory,
-  ) async {
+  Future<int> deletStoreFactory<K, V>(StoreRef<K, V> mapStoreFactory) async {
     final length = await mapStoreFactory.delete(_db);
     return length;
   }
 
   @override
-  Future<void> dropStoreFactory<K, V>(
-    StoreRef<K, V> mapStoreFactory,
-  ) async {
+  Future<void> dropStoreFactory<K, V>(StoreRef<K, V> mapStoreFactory) async {
     await mapStoreFactory.drop(_db);
   }
 
@@ -55,19 +51,13 @@ class SembastHelperImpl implements SembastHelper {
   }
 
   @override
-  Future<V?> get<K, V>(
-    RecordRef<K, V> recordRef,
-  ) async {
+  Future<V?> get<K, V>(RecordRef<K, V> recordRef) async {
     final value = await recordRef.get(_db);
     return value;
   }
 
   @override
-  Future<V> put<K, V>(
-    RecordRef<K, V> recordRef,
-    V value, {
-    bool? merge,
-  }) async {
+  Future<V> put<K, V>(RecordRef<K, V> recordRef, V value, {bool? merge}) async {
     final updatedValue = await recordRef.put(_db, value, merge: merge);
     return updatedValue;
   }
@@ -102,9 +92,7 @@ class SembastHelperImpl implements SembastHelper {
   }
 
   @override
-  Future<List<V?>> getList<K, V>(
-    RecordsRef<K, V> recordsRef,
-  ) async {
+  Future<List<V?>> getList<K, V>(RecordsRef<K, V> recordsRef) async {
     final values = await recordsRef.get(_db);
     return values;
   }

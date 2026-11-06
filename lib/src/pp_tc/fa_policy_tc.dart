@@ -25,13 +25,15 @@ class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
     super.initState();
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(NavigationDelegate(
-        onPageFinished: (_) {
-          setState(() {
-            _pageLoaded = true;
-          });
-        },
-      ))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageFinished: (_) {
+            setState(() {
+              _pageLoaded = true;
+            });
+          },
+        ),
+      )
       ..loadRequest(
         Uri.parse(widget.url ?? 'https://www.fieldassist.com/privacy-policy/'),
       );
@@ -42,13 +44,8 @@ class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
     return Scaffold(
       body: Stack(
         children: [
-          WebViewWidget(
-            controller: _controller,
-          ),
-          if (!_pageLoaded)
-            Center(
-              child: CircularProgressIndicator(),
-            ),
+          WebViewWidget(controller: _controller),
+          if (!_pageLoaded) Center(child: CircularProgressIndicator()),
         ],
       ),
       bottomNavigationBar: !(_pageLoaded && widget.showAcceptAndReject)
@@ -57,27 +54,29 @@ class _FaPrivacyPoliciesAndTCState extends State<FaPrivacyPoliciesAndTC> {
               children: [
                 Expanded(
                   child: MaterialButton(
-                      color: Colors.red.shade300,
-                      child: Text(
-                        "Reject",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {
-                        widget.onResult?.call(false);
-                        Navigator.pop(context);
-                      }),
+                    color: Colors.red.shade300,
+                    child: Text(
+                      "Reject",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      widget.onResult?.call(false);
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
                 Expanded(
                   child: MaterialButton(
-                      color: Colors.blue.shade300,
-                      child: Text(
-                        "Accept",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {
-                        widget.onResult?.call(true);
-                        Navigator.pop(context);
-                      }),
+                    color: Colors.blue.shade300,
+                    child: Text(
+                      "Accept",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      widget.onResult?.call(true);
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
               ],
             ),

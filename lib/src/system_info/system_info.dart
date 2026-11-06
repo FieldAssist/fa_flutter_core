@@ -40,15 +40,15 @@ class SystemInfo implements DeviceInfo, PackageInformation {
   String get imei => deviceInfo.imei;
 
   Map<String, dynamic> get map => {
-        "AppVersionName": version,
-        "AppVersionNumber": buildNumber,
-        "Brand": brand,
-        "GcmId": "na",
-        "Manufacturer": manufacturer,
-        "Model": model,
-        "OSVersion": os,
-        "SdkVersion": sdk,
-        "Serial": id,
-        "IMEINo": imei,
-      };
+    "AppVersionName": version,
+    "AppVersionNumber": buildNumber,
+    "Brand": brand,
+    "GcmId": "na",
+    "Manufacturer": manufacturer,
+    "Model": model,
+    "OSVersion": os,
+    "SdkVersion": sdk,
+    "Serial": id,
+    "IMEINo": imei,
+  };
 }
