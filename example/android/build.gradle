@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = '2.1.0'
+    ext.kotlin_version = '2.4.0'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.3'
+        classpath 'com.android.tools.build:gradle:9.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -15,6 +15,17 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+    }
+}
+
+// realm 20.2.0 (its final release) still compiles against android-31, but its AndroidX
+// deps need 34+ and permission_handler 13 needs 37: force one compileSdk on every module.
+subprojects {
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin("com.android.application") ||
+                project.plugins.hasPlugin("com.android.library")) {
+            project.android { compileSdkVersion 37 }
+        }
     }
 }
 
