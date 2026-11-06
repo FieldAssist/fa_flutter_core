@@ -19,8 +19,9 @@ extension getInitials on String {
   String insertLineBreaks(int maxLineLength) {
     final buffer = StringBuffer();
     for (int i = 0; i < this.length; i += maxLineLength) {
-      final end =
-          (i + maxLineLength < this.length) ? i + maxLineLength : this.length;
+      final end = (i + maxLineLength < this.length)
+          ? i + maxLineLength
+          : this.length;
       buffer.writeln(this.substring(i, end));
     }
     return buffer.toString().trim();

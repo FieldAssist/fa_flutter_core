@@ -1,10 +1,11 @@
 import 'package:in_app_update/in_app_update.dart';
 
 abstract class InAppUpdator {
-  Future<bool> updateAccordingToMinOrRecommendedVersion(
-      {required int appMinVersion,
-      required int appRecommendedVersion,
-      required int currentVersion});
+  Future<bool> updateAccordingToMinOrRecommendedVersion({
+    required int appMinVersion,
+    required int appRecommendedVersion,
+    required int currentVersion,
+  });
 
   Future<bool> checkForUpdate();
 
@@ -33,10 +34,11 @@ class InAppUpdatorImpl extends InAppUpdator {
   }
 
   @override
-  Future<bool> updateAccordingToMinOrRecommendedVersion(
-      {required int appMinVersion,
-      required int appRecommendedVersion,
-      required int currentVersion}) async {
+  Future<bool> updateAccordingToMinOrRecommendedVersion({
+    required int appMinVersion,
+    required int appRecommendedVersion,
+    required int currentVersion,
+  }) async {
     if (appMinVersion > currentVersion) {
       // logger.i("****REQUIRED****");
       await startInAppUpdate();
@@ -55,8 +57,9 @@ class InAppUpdatorImpl extends InAppUpdator {
 
   @override
   Future<bool> startInAppUpdate() async {
-    final value =
-        await InAppUpdate.performImmediateUpdate().catchError((e) async {
+    final value = await InAppUpdate.performImmediateUpdate().catchError((
+      e,
+    ) async {
       _error = e.toString();
     });
     _updateResult = value;

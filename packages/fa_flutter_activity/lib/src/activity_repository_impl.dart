@@ -34,8 +34,9 @@ class ActivityRepositoryImpl implements ActivityRepository {
   String _tag(ActivitySession session) {
     final guid = session.guid;
     final shortGuid = guid.length > 8 ? guid.substring(0, 8) : guid;
-    final sub =
-        session.subModuleName == null ? '' : '/${session.subModuleName}';
+    final sub = session.subModuleName == null
+        ? ''
+        : '/${session.subModuleName}';
     return '${session.source.name}:${session.moduleName}$sub '
         '"${session.name}" [$shortGuid]';
   }
@@ -57,13 +58,13 @@ class ActivityRepositoryImpl implements ActivityRepository {
       return null;
     }
     try {
-      return ActivitySession.fromJson(
-        jsonDecode(raw) as Map<String, dynamic>,
-      );
+      return ActivitySession.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     } catch (e) {
       // A malformed value would otherwise wedge tracking permanently.
-      _logger.e('[Activity] Dropping unreadable $label session: $e',
-          StackTrace.current);
+      _logger.e(
+        '[Activity] Dropping unreadable $label session: $e',
+        StackTrace.current,
+      );
       unawaited(appPrefs.remove(key));
       return null;
     }
@@ -75,15 +76,14 @@ class ActivityRepositoryImpl implements ActivityRepository {
     required ActivityModule moduleEnum,
     ActivitySubModule? subModuleEnum,
     ActivitySource source = ActivitySource.sfa,
-  }) =>
-      _serialized(
-        () => _trackUnlocked(
-          name: name,
-          moduleEnum: moduleEnum,
-          subModuleEnum: subModuleEnum,
-          source: source,
-        ),
-      );
+  }) => _serialized(
+    () => _trackUnlocked(
+      name: name,
+      moduleEnum: moduleEnum,
+      subModuleEnum: subModuleEnum,
+      source: source,
+    ),
+  );
 
   Future<ActivitySession> _trackUnlocked({
     required String name,
@@ -92,7 +92,8 @@ class ActivityRepositoryImpl implements ActivityRepository {
     ActivitySource source = ActivitySource.sfa,
   }) async {
     final current = currentSession;
-    final isSameScreen = current?.isSameScreenAs(
+    final isSameScreen =
+        current?.isSameScreenAs(
           name: name,
           moduleEnum: moduleEnum,
           subModuleEnum: subModuleEnum,
@@ -110,8 +111,10 @@ class ActivityRepositoryImpl implements ActivityRepository {
     }
 
     if (current != null) {
-      _logger.d('[Activity] Switch ${_tag(current)} -> ${moduleEnum.label}'
-          '${subModuleEnum == null ? '' : '/${subModuleEnum.label}'}');
+      _logger.d(
+        '[Activity] Switch ${_tag(current)} -> ${moduleEnum.label}'
+        '${subModuleEnum == null ? '' : '/${subModuleEnum.label}'}',
+      );
     }
 
     return _startSessionUnlocked(
@@ -154,15 +157,14 @@ class ActivityRepositoryImpl implements ActivityRepository {
     required ActivityModule moduleEnum,
     ActivitySubModule? subModuleEnum,
     ActivitySource source = ActivitySource.sfa,
-  }) =>
-      _serialized(
-        () => _startSessionUnlocked(
-          name: name,
-          moduleEnum: moduleEnum,
-          subModuleEnum: subModuleEnum,
-          source: source,
-        ),
-      );
+  }) => _serialized(
+    () => _startSessionUnlocked(
+      name: name,
+      moduleEnum: moduleEnum,
+      subModuleEnum: subModuleEnum,
+      source: source,
+    ),
+  );
 
   Future<ActivitySession> _startSessionUnlocked({
     required String name,
@@ -191,15 +193,14 @@ class ActivityRepositoryImpl implements ActivityRepository {
     ActivityModule? moduleEnum,
     ActivitySubModule? subModuleEnum,
     bool clearSubModuleEnum = false,
-  }) =>
-      _serialized(
-        () => _updateCurrentSessionUnlocked(
-          name: name,
-          moduleEnum: moduleEnum,
-          subModuleEnum: subModuleEnum,
-          clearSubModuleEnum: clearSubModuleEnum,
-        ),
-      );
+  }) => _serialized(
+    () => _updateCurrentSessionUnlocked(
+      name: name,
+      moduleEnum: moduleEnum,
+      subModuleEnum: subModuleEnum,
+      clearSubModuleEnum: clearSubModuleEnum,
+    ),
+  );
 
   Future<ActivitySession?> _updateCurrentSessionUnlocked({
     String? name,
@@ -216,8 +217,9 @@ class ActivityRepositoryImpl implements ActivityRepository {
     final updated = current.copyWith(
       name: name ?? current.name,
       moduleEnum: moduleEnum ?? current.moduleEnum,
-      subModuleEnum:
-          clearSubModuleEnum ? null : (subModuleEnum ?? current.subModuleEnum),
+      subModuleEnum: clearSubModuleEnum
+          ? null
+          : (subModuleEnum ?? current.subModuleEnum),
     );
     await _saveCurrentSession(updated);
     // Same guid and startTime: the session was amended, not split.
@@ -231,53 +233,52 @@ class ActivityRepositoryImpl implements ActivityRepository {
     ActivityModule moduleEnum = ActivityModule.embeddedGtFaOne,
     ActivitySubModule subModuleEnum = ActivitySubModule.embeddedGtFaOneSession,
     ActivitySource source = ActivitySource.sfa,
-  }) =>
-      _serialized(() async {
-        final open = appSession;
-        if (open != null) {
-          // Already running — a second call must not restart the clock, or a
-          // re-entered lifecycle callback would silently discard the elapsed
-          // time.
-          _logger.d(
-            '[Activity] App session already open ${_tag(open)} '
-            '(${open.durationInMillis}ms so far)',
-          );
-          return open;
-        }
+  }) => _serialized(() async {
+    final open = appSession;
+    if (open != null) {
+      // Already running — a second call must not restart the clock, or a
+      // re-entered lifecycle callback would silently discard the elapsed
+      // time.
+      _logger.d(
+        '[Activity] App session already open ${_tag(open)} '
+        '(${open.durationInMillis}ms so far)',
+      );
+      return open;
+    }
 
-        final session = ActivitySession(
-          guid: const Uuid().v7(),
-          name: name,
-          moduleEnum: moduleEnum,
-          startTime: _nowInMillis,
-          source: source,
-          subModuleEnum: subModuleEnum,
-        );
-        await appPrefs.setString(
-          ActivityRepository.prefsAppSession,
-          jsonEncode(session.toJson()),
-        );
-        _logger.d('[Activity] App session started ${_tag(session)}');
-        return session;
-      });
+    final session = ActivitySession(
+      guid: const Uuid().v7(),
+      name: name,
+      moduleEnum: moduleEnum,
+      startTime: _nowInMillis,
+      source: source,
+      subModuleEnum: subModuleEnum,
+    );
+    await appPrefs.setString(
+      ActivityRepository.prefsAppSession,
+      jsonEncode(session.toJson()),
+    );
+    _logger.d('[Activity] App session started ${_tag(session)}');
+    return session;
+  });
 
   @override
   Future<ActivitySession?> endAppSession() => _serialized(() async {
-        final open = appSession;
-        if (open == null) {
-          _logger.d('[Activity] endAppSession: no app session open');
-          return null;
-        }
+    final open = appSession;
+    if (open == null) {
+      _logger.d('[Activity] endAppSession: no app session open');
+      return null;
+    }
 
-        final closed = open.copyWith(endTime: _nowInMillis);
-        await activityDao.addPendingActivity(closed);
-        await appPrefs.remove(ActivityRepository.prefsAppSession);
-        _logger.d(
-          '[Activity] App session closed ${_tag(closed)} after '
-          '${closed.durationInMillis}ms, buffered for upload',
-        );
-        return closed;
-      });
+    final closed = open.copyWith(endTime: _nowInMillis);
+    await activityDao.addPendingActivity(closed);
+    await appPrefs.remove(ActivityRepository.prefsAppSession);
+    _logger.d(
+      '[Activity] App session closed ${_tag(closed)} after '
+      '${closed.durationInMillis}ms, buffered for upload',
+    );
+    return closed;
+  });
 
   @override
   Future<ActivitySession?> endCurrentSession() =>
@@ -346,8 +347,10 @@ class ActivityRepositoryImpl implements ActivityRepository {
     try {
       last = ActivitySession.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     } catch (e) {
-      _logger.e('[Activity] Dropping unreadable stashed session: $e',
-          StackTrace.current);
+      _logger.e(
+        '[Activity] Dropping unreadable stashed session: $e',
+        StackTrace.current,
+      );
       await appPrefs.remove(ActivityRepository.prefsLastActivity);
       return null;
     }
@@ -418,16 +421,16 @@ class ActivityRepositoryImpl implements ActivityRepository {
 
   @override
   Future<void> clear() => _serialized(() async {
-        final dropped = (await activityDao.getPendingActivities()).length;
-        await appPrefs.remove(ActivityRepository.prefsCurrentActivity);
-        await appPrefs.remove(ActivityRepository.prefsLastActivity);
-        await appPrefs.remove(ActivityRepository.prefsAppSession);
-        await activityDao.clearPendingActivities();
-        _logger.w(
-          '[Activity] Cleared all activity state, '
-          'discarding $dropped unsynced session(s)',
-        );
-      });
+    final dropped = (await activityDao.getPendingActivities()).length;
+    await appPrefs.remove(ActivityRepository.prefsCurrentActivity);
+    await appPrefs.remove(ActivityRepository.prefsLastActivity);
+    await appPrefs.remove(ActivityRepository.prefsAppSession);
+    await activityDao.clearPendingActivities();
+    _logger.w(
+      '[Activity] Cleared all activity state, '
+      'discarding $dropped unsynced session(s)',
+    );
+  });
 
   Future<void> _saveCurrentSession(ActivitySession session) =>
       appPrefs.setString(

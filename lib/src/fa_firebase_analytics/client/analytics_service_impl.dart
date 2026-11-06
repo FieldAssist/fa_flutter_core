@@ -17,14 +17,18 @@ abstract class AnalyticsServiceImpl extends AnalyticsService {
   Future<void> setUserId(String id) => analytics.setUserId(id: id);
 
   @override
-  Future<void> setUserProperties(
-      {required String name, required String value}) {
+  Future<void> setUserProperties({
+    required String name,
+    required String value,
+  }) {
     return analytics.setUserProperty(name: name, value: value);
   }
 
   @protected
-  Future<void>? logEvent(
-      {required String? name, Map<String, Object>? parameters}) {
+  Future<void>? logEvent({
+    required String? name,
+    Map<String, Object>? parameters,
+  }) {
     if (isMobile) {
       return analytics
           .logEvent(name: name!, parameters: parameters!)

@@ -13,9 +13,12 @@ _ActivitySession _$ActivitySessionFromJson(Map<String, dynamic> json) =>
       moduleEnum: $enumDecode(_$ActivityModuleEnumMap, json['ModuleEnum']),
       startTime: (json['StartTime'] as num).toInt(),
       subModuleEnum: $enumDecodeNullable(
-          _$ActivitySubModuleEnumMap, json['SubModuleEnum']),
+        _$ActivitySubModuleEnumMap,
+        json['SubModuleEnum'],
+      ),
       endTime: (json['EndTime'] as num?)?.toInt(),
-      source: $enumDecodeNullable(_$ActivitySourceEnumMap, json['Source']) ??
+      source:
+          $enumDecodeNullable(_$ActivitySourceEnumMap, json['Source']) ??
           ActivitySource.sfa,
     );
 

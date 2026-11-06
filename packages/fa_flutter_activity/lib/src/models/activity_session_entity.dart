@@ -23,15 +23,16 @@ class _ActivitySessionEntity {
 
 extension ActivitySessionEntityX on ActivitySessionEntity {
   ActivitySession toModel() => ActivitySession(
-        guid: guid,
-        name: name,
-        moduleEnum: _byName(ActivityModule.values, moduleEnum) ??
-            ActivityModule.generalTrade,
-        startTime: startTime,
-        subModuleEnum: _byName(ActivitySubModule.values, subModuleEnum),
-        endTime: endTime,
-        source: _sourceFromStorage(source),
-      );
+    guid: guid,
+    name: name,
+    moduleEnum:
+        _byName(ActivityModule.values, moduleEnum) ??
+        ActivityModule.generalTrade,
+    startTime: startTime,
+    subModuleEnum: _byName(ActivitySubModule.values, subModuleEnum),
+    endTime: endTime,
+    source: _sourceFromStorage(source),
+  );
 
   static ActivitySessionEntity fromModel(ActivitySession session) =>
       ActivitySessionEntity(
@@ -45,14 +46,14 @@ extension ActivitySessionEntityX on ActivitySessionEntity {
       );
 
   static String _sourceToStorage(ActivitySource source) => switch (source) {
-        ActivitySource.sfa => 'SFA',
-        ActivitySource.faOne => 'FA_ONE',
-      };
+    ActivitySource.sfa => 'SFA',
+    ActivitySource.faOne => 'FA_ONE',
+  };
 
   static ActivitySource _sourceFromStorage(String value) => switch (value) {
-        'FA_ONE' => ActivitySource.faOne,
-        _ => ActivitySource.sfa,
-      };
+    'FA_ONE' => ActivitySource.faOne,
+    _ => ActivitySource.sfa,
+  };
 
   static T? _byName<T extends Enum>(List<T> values, String? name) {
     if (name == null) {

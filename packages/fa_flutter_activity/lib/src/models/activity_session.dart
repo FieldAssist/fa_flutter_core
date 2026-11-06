@@ -83,15 +83,15 @@ abstract class ActivitySession with _$ActivitySession {
       _$ActivitySessionFromJson(json);
 
   Map<String, dynamic> toApiJson() => <String, dynamic>{
-        'guid': guid,
-        'activityDescription': name,
-        'moduleName': moduleName,
-        'moduleEnum': moduleEnum.id,
-        'subModuleName': subModuleName,
-        'subModuleEnum': subModuleEnum?.id,
-        'startTime': _toApiTimestamp(startTime),
-        'endTime': _toApiTimestamp(endTime ?? startTime),
-      };
+    'guid': guid,
+    'activityDescription': name,
+    'moduleName': moduleName,
+    'moduleEnum': moduleEnum.id,
+    'subModuleName': subModuleName,
+    'subModuleEnum': subModuleEnum?.id,
+    'startTime': _toApiTimestamp(startTime),
+    'endTime': _toApiTimestamp(endTime ?? startTime),
+  };
 
   String get moduleName => moduleEnum.label;
 
